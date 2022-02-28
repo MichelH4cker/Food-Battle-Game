@@ -20,6 +20,6 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     }
 
     public void OnPointerUp(PointerEventData eventData) {
-        throw new System.NotImplementedException();
+        Destroy(objectDragInstance);
     }
 }
