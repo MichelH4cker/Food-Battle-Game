@@ -5,10 +5,15 @@ using UnityEngine.EventSystems;
 
 public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler {
 
+    private GameManager gameManager;
     private GameObject objectDragInstance;
     public GameObject objectDrag;
     public GameObject objectGame;
     public Canvas canvas;
+
+    private void Start() {
+        gameManager = GameManager.instance; 
+    }
 
     public void OnDrag(PointerEventData eventData) {
         objectDragInstance.transform.position = Input.mousePosition;
@@ -17,12 +22,14 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public void OnPointerDown(PointerEventData eventData) {
         objectDragInstance = Instantiate(objectDrag, canvas.transform);
         objectDragInstance.transform.position = Input.mousePosition;
-    
-        GameManager.instance.draggingObject = objectDragInstance; 
+        objectDragInstance.GetComponent<ObjectDragging>().card = this;
+
+        gameManager.draggingObject = objectDragInstance; 
     }
 
     public void OnPointerUp(PointerEventData eventData) {
-        GameManager.instance.draggingObject = null; 
+        gameManager.PlaceObject();
+        gameManager.draggingObject = null; 
         Destroy(objectDragInstance);
     }
 }
