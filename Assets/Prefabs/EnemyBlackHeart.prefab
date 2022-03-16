@@ -122,3 +122,4 @@ MonoBehaviour:
   FinalDestination: {x: 0, y: 0, z: 0}
   Health: 200
   Damage: 2
+  movementSpeed: 0.1
