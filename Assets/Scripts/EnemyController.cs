@@ -8,8 +8,17 @@ public class EnemyController : MonoBehaviour {
     public int Health;
     public int Damage;
     public float movementSpeed;
+    private bool isStopped;
 
     void Update() {
-         transform.Translate(new Vector3(movementSpeed * -1, 0, 0));
+        if(!isStopped) {
+            transform.Translate(new Vector3(movementSpeed * -1, 0, 0));
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.layer == 10){
+            isStopped = true;
+        }           
     }
 }

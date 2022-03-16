@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: -4043455011211147594}
   - component: {fileID: 2600689490141159058}
   - component: {fileID: -4646028759011277069}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyBlackHeart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   FinalDestination: {x: 0, y: 0, z: 0}
   Health: 200
   Damage: 2
-  movementSpeed: 0.1
+  movementSpeed: 0.2
 --- !u!50 &2600689490141159058
 Rigidbody2D:
   serializedVersion: 4
@@ -156,7 +156,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
