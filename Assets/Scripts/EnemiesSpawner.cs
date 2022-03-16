@@ -10,10 +10,9 @@ public class EnemiesSpawner : MonoBehaviour  {
         foreach(Enemy enemy in enemies) {
             if(enemy.isSpawned == false && enemy.spawnTime <= Time.time){
                 GameObject enemyInstance = Instantiate(enemiesPrefabs[(int)enemy.enemyType], transform.GetChild(enemy.spawner).transform); 
-                
+                transform.GetChild(enemy.spawner).GetComponent<SpawnPoint>().enemies.Add(enemyInstance);
                 enemy.isSpawned = true;
                 
-                enemyInstance.GetComponent<EnemyController>().FinalDestination = transform.GetChild(enemy.spawner).GetComponent<SpawnPoint>().Destination;
             }
         }
     }

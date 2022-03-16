@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7837777155249177860}
   - component: {fileID: 7837777155249177861}
   - component: {fileID: -1403856791053882051}
+  - component: {fileID: 1613019914882129263}
   m_Layer: 10
   m_Name: HeartObjectGame
   m_TagString: Untagged
@@ -102,3 +103,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!114 &1613019914882129263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837777155249177867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309d4ed545dd3cd5a91a4a6cca111223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: []
