@@ -10,4 +10,10 @@ public class Bullet : MonoBehaviour {
         transform.Translate(new Vector3(movementSpeed, 0, 0));
     }
 
+    public void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.layer == 11){
+            Destroy(this.gameObject);
+        }           
+    }
+
 }
