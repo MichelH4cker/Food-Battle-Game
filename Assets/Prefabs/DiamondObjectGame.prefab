@@ -115,3 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309d4ed545dd3cd5a91a4a6cca111223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 261668489877197296, guid: dc7b9a695ae47e1e49814b68154cbc37, type: 3}
+  enemies: []
+  toAttack: {fileID: 0}
+  isAttacking: 0
+  attackCooldown: 2

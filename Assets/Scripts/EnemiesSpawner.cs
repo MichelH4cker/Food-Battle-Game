@@ -9,10 +9,11 @@ public class EnemiesSpawner : MonoBehaviour  {
     private void Update(){
         foreach(Enemy enemy in enemies) {
             if(enemy.isSpawned == false && enemy.spawnTime <= Time.time){
-                GameObject enemyInstance = Instantiate(enemiesPrefabs[(int)enemy.enemyType], transform.GetChild(enemy.spawner).transform); 
+                GameObject enemyInstance = Instantiate(enemiesPrefabs[(int)enemy.enemyType], transform.GetChild(enemy.spawner).transform);
+
                 transform.GetChild(enemy.spawner).GetComponent<SpawnPoint>().enemies.Add(enemyInstance);
+
                 enemy.isSpawned = true;
-                
             }
         }
     }
