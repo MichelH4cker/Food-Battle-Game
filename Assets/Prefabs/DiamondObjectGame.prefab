@@ -119,4 +119,5 @@ MonoBehaviour:
   enemies: []
   toAttack: {fileID: 0}
   isAttacking: 0
+  DamageValue: 200
   attackCooldown: 2

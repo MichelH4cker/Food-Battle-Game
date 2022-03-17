@@ -7,6 +7,7 @@ public class FriendController : MonoBehaviour {
     public List<GameObject> enemies;
     public GameObject toAttack;
     public bool isAttacking;
+    public int DamageValue;
     public float attackCooldown;
     private float attackTime;
 
@@ -27,7 +28,8 @@ public class FriendController : MonoBehaviour {
 
         if (toAttack != null) {
             if (attackTime <= Time.time) {
-                Instantiate(bullet, transform);
+                GameObject bulletInstance = Instantiate(bullet, transform);
+                bulletInstance.GetComponent<Bullet>().DamageValue = DamageValue;
                 attackTime = Time.time + attackCooldown;
             }
         }

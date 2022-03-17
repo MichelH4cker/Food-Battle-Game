@@ -122,8 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FinalDestination: {x: 0, y: 0, z: 0}
-  Health: 300
-  Damage: 3
+  Health: 2400
   movementSpeed: 0.2
 --- !u!50 &5773482479438634845
 Rigidbody2D:

@@ -6,7 +6,6 @@ public class EnemyController : MonoBehaviour {
     
     public Vector3 FinalDestination;
     public int Health;
-    public int Damage;
     public float movementSpeed;
     private bool isStopped;
 
@@ -21,4 +20,16 @@ public class EnemyController : MonoBehaviour {
             isStopped = true;
         }           
     }
+    
+    public void ReceiveDamage(int Damage) {
+        if(Health - Damage <= 0) {
+            // enemy is DEAD
+            transform.parent.GetComponent<SpawnPoint>().enemies.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        } else {
+            // enemy is not DEAD, needs receive damage 
+            Health = Health - Damage;
+        }
+    }
+
 }
