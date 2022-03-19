@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 261668489877197296, guid: dc7b9a695ae47e1e49814b68154cbc37, type: 3}
-  enemies: []
   toAttack: {fileID: 0}
+  enemies: []
   isAttacking: 0
+  Health: 5
   DamageValue: 200
   attackCooldown: 3.5

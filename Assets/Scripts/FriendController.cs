@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class FriendController : MonoBehaviour {
     public GameObject bullet;
-    public List<GameObject> enemies;
     public GameObject toAttack;
+    public List<GameObject> enemies;
     public bool isAttacking;
+    public int Health;
     public int DamageValue;
     public float attackCooldown;
     private float attackTime;
-
+  
     private void Update() {
         if (enemies.Count > 0){  
             float distance = 999;
@@ -33,6 +34,13 @@ public class FriendController : MonoBehaviour {
                 attackTime = Time.time + attackCooldown;
             }
         }
+    }
 
+    public void ReceiveDamage(int Damage) {
+        if(Health - Damage <= 0) {
+            Destroy(this.gameObject);
+        } else {
+            Health = Health - Damage;
+        }
     }
 }
