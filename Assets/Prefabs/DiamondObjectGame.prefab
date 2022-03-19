@@ -120,4 +120,4 @@ MonoBehaviour:
   toAttack: {fileID: 0}
   isAttacking: 0
   DamageValue: 200
-  attackCooldown: 2
+  attackCooldown: 3.5

@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 7837777155249177867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.640912, y: 0.640912, z: 0.640912}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -120,4 +120,4 @@ MonoBehaviour:
   toAttack: {fileID: 0}
   isAttacking: 0
   DamageValue: 200
-  attackCooldown: 2
+  attackCooldown: 3.5
