@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class FriendController : MonoBehaviour {
     public GameObject bullet;
@@ -11,7 +13,10 @@ public class FriendController : MonoBehaviour {
     public int DamageValue;
     public float attackCooldown;
     private float attackTime;
-  
+
+    public Image mainImage;
+    public Sprite blinkImage;
+    
     private void Update() {
         if (enemies.Count > 0){  
             float distance = 999;
@@ -36,7 +41,7 @@ public class FriendController : MonoBehaviour {
         }
     }
 
-    public void ReceiveDamage(int Damage) {
+    public void ReceiveDamage(int Damage) { // friend receive damage
         if(Health - Damage <= 0) {
             Destroy(this.gameObject);
         } else {

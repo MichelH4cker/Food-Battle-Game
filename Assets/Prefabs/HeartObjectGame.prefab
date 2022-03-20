@@ -122,3 +122,5 @@ MonoBehaviour:
   Health: 5
   DamageValue: 200
   attackCooldown: 3.5
+  mainImage: {fileID: 7837777155249177861}
+  blinkImage: {fileID: 21300000, guid: f3e787b9cc6933ae4a435ea2c184f095, type: 3}

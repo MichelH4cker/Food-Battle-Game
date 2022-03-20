@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour {
-    
     public Vector3 FinalDestination;
     public int DamageValue;
     public int Health;
     public float DamageCooldown;
     public float movementSpeed;
     private bool isStopped;
+
+    public Image mainImage;
+    public Sprite blinkImage;
 
     void Update() {
         if(!isStopped) {
@@ -21,22 +24,20 @@ public class EnemyController : MonoBehaviour {
         if (collision.gameObject.layer == 10){
             StartCoroutine(Attack(collision));
             isStopped = true;
-        }           
+        }    
     }
     
     IEnumerator Attack(Collider2D collision) {
         if (collision == null) {
             isStopped = false;
         } else {
-            collision.gameObject.GetComponent<FriendController>().ReceiveDamage(DamageValue);
-            
+            collision.gameObject.GetComponent<FriendController>().ReceiveDamage(DamageValue); // friend receive damage
             yield return new WaitForSeconds(DamageCooldown);
-
             StartCoroutine(Attack(collision));
         }
     }
     
-    public void ReceiveDamage(int Damage) {
+    public void ReceiveDamage(int Damage) { // enemy receive damage
         if(Health - Damage <= 0) {
             // enemy is DEAD
             transform.parent.GetComponent<SpawnPoint>().enemies.Remove(this.gameObject);
@@ -46,5 +47,4 @@ public class EnemyController : MonoBehaviour {
             Health = Health - Damage;
         }
     }
-
 }
