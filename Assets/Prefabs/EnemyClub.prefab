@@ -125,8 +125,9 @@ MonoBehaviour:
   DamageValue: 1
   Health: 3000
   DamageCooldown: 2
-  movementSpeed: 0.2
-  sprite: {fileID: 0}
+  movementSpeed: 0.4
+  mainImage: {fileID: 0}
+  blinkImage: {fileID: 0}
 --- !u!50 &1831198287783652428
 Rigidbody2D:
   serializedVersion: 4

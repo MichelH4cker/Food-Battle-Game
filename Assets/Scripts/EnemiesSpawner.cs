@@ -3,22 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemiesSpawner : MonoBehaviour  {
+    public List<GameObject> spawnPointList;
     public List<GameObject> enemiesPrefabs; 
-    public List<Enemy> enemies;
 
-    private void Update(){
-        foreach(Enemy enemy in enemies) {
-            if(enemy.isSpawned == false && enemy.spawnTime <= Time.time) {
-                if(enemy.randomSpawn) {
-                    enemy.spawner = Random.Range(0, transform.childCount);
-                }
+    int spawnPointIndex;
+    int enemyIndex;
+    float spawnTime = 0;
+    float randomTime;
 
-                GameObject enemyInstance = Instantiate(enemiesPrefabs[(int)enemy.enemyType], transform.GetChild(enemy.spawner).transform);
+    void Awake() {
+        randomTime = 0;
+    }
 
-                transform.GetChild(enemy.spawner).GetComponent<SpawnPoint>().enemies.Add(enemyInstance);
+    private void Update(){        
+        spawnTime += Time.deltaTime;
+        
+        if (spawnTime > randomTime) {
+            spawnTime = 0;
+            randomTime = Random.Range(6,10);
 
-                enemy.isSpawned = true;
-            }
-        }
+            spawnPointIndex = Random.Range(0,5);
+            enemyIndex = Random.Range(0,3);
+
+            Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
+        } 
     }
 }

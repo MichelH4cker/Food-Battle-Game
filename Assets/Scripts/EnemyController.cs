@@ -2,26 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//-1050 é o máximo de posição x
 public class EnemyController : MonoBehaviour {
-    public Vector3 FinalDestination;
-    public int DamageValue;
-    public int Health;
-    public float DamageCooldown;
-    public float movementSpeed;
+    public  int DamageValue;
+    public  int Health;
+    public  float DamageCooldown;    
+    
     private bool isStopped;
 
-    public Image mainImage;
-    public Sprite blinkImage;
+    private const int DESTROY_X_POSITION = -150;
+    private const float MOVEMENT_SPEED = 0.3f;
 
-    void Update() {
+    void Update() {   
         if(!isStopped) {
-            transform.Translate(new Vector3(movementSpeed * -1, 0, 0));
+            transform.Translate(new Vector3(MOVEMENT_SPEED * -1, 0, 0));
+        }
+        
+        if (LeftTheMap()) {
+            Destroy(this.gameObject);
         }
     }
    
     public void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == 10){
+            Debug.Log(transform.position);
             StartCoroutine(Attack(collision));
             isStopped = true;
         }    
@@ -39,12 +43,19 @@ public class EnemyController : MonoBehaviour {
     
     public void ReceiveDamage(int Damage) { // enemy receive damage
         if(Health - Damage <= 0) {
-            // enemy is DEAD
             transform.parent.GetComponent<SpawnPoint>().enemies.Remove(this.gameObject);
             Destroy(this.gameObject);
         } else {
-            // enemy is not DEAD, needs receive damage 
             Health = Health - Damage;
         }
     }
+
+    private bool LeftTheMap() {
+        if (transform.position.x == DESTROY_X_POSITION) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

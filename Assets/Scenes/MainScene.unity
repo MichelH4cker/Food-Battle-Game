@@ -1083,6 +1083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggingObject: {fileID: 6340830517737638875, guid: 9b27f99e51d6091398ed34e1623ead1b, type: 3}
   currentContainer: {fileID: 0}
+  currentAllies: 0
 --- !u!1001 &372874528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3932,26 +3933,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fa8d35bf06d0b5cb0087a11f174a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPointList:
+  - {fileID: 1907164929}
+  - {fileID: 2012292546}
+  - {fileID: 1741008853}
+  - {fileID: 294046824}
+  - {fileID: 1667506152}
   enemiesPrefabs:
   - {fileID: 9022282966073186147, guid: ea2f4690b9971421f85034aa6c23bc45, type: 3}
   - {fileID: 7682508670703673642, guid: 8b791f3225d6632b893ebc593cb6167f, type: 3}
   - {fileID: 9082950405465860085, guid: 51b8f731e06934ab8925eeeae1bc9d27, type: 3}
-  enemies:
-  - enemyType: 0
-    spawnTime: 2
-    spawner: 0
-    randomSpawn: 0
-    isSpawned: 0
-  - enemyType: 1
-    spawnTime: 3
-    spawner: 2
-    randomSpawn: 0
-    isSpawned: 0
-  - enemyType: 2
-    spawnTime: 5
-    spawner: 4
-    randomSpawn: 0
-    isSpawned: 0
 --- !u!1001 &1182449580
 PrefabInstance:
   m_ObjectHideFlags: 0
