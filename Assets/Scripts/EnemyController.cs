@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//-1050 é o máximo de posição x
+
 public class EnemyController : MonoBehaviour {
     public  int DamageValue;
     public  int Health;
@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour {
     }
 
     private bool LeftTheMap() {
-        if (transform.position.x == DESTROY_X_POSITION) {
+        if (transform.position.x < DESTROY_X_POSITION) {
             return true;
         } else {
             return false;
