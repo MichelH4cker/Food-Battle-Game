@@ -9,16 +9,13 @@ public class EnemiesSpawner : MonoBehaviour  {
         return instance;
     }
 
-
     public List<GameObject> spawnPointList;
     public List<GameObject> enemiesPrefabs; 
 
     public GameObject enemyInstance;
     
-    public GameManager gameManager;
-
     private bool quizPause;
-
+ 
     int spawnPointIndex;
     int enemyIndex;
     float spawnTime = 0;
@@ -30,24 +27,29 @@ public class EnemiesSpawner : MonoBehaviour  {
     }
 
     void Start() {
-        gameManager = GameManager.instance;
+        quizPause = GameManager.GetInstance().quizPause;
     }
 
     private void Update(){      
-        quizPause = GameManager.GetInstance().quizPause;
         if(!quizPause){
-            spawnTime += Time.deltaTime;
-            
-            if (spawnTime > randomTime) {
-                spawnTime = 0;
-                randomTime = Random.Range(8,13);
-
-                spawnPointIndex = Random.Range(0,5);
-                enemyIndex = Random.Range(0,3);
-
-                enemyInstance = Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
-            } 
-
+            SpawnEnemies();
         }  
+    }
+
+    public GameObject SpawnEnemies() {
+        spawnTime += Time.deltaTime;
+            
+        if (spawnTime > randomTime) {
+            spawnTime = 0;
+            randomTime = Random.Range(8,13);
+
+            spawnPointIndex = Random.Range(0,5);
+            enemyIndex = Random.Range(0,3);
+
+            enemyInstance = Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
+
+            return enemyInstance;
+        } 
+        return null;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FriendController : MonoBehaviour {
+
     public GameObject bullet;
     public GameObject toAttack;
 
@@ -18,14 +19,23 @@ public class FriendController : MonoBehaviour {
 
     private float attackTime;
     private bool quizPause;
-    
-    private void Update() {
-        quizPause = GameManager.GetInstance().quizPause;
 
-        if (!quizPause) { // executa somente se o jogo não estiver pausado pelo quiz
-            enemies.Add(EnemiesSpawner.GetInstance().enemyInstance);
+    GameObject newEnemy;
+
+    void Start() {
+        gameManager = GameManager.instance;
+        quizPause = GameManager.GetInstance().quizPause;
+    }
+
+    private void Update() {
+        newEnemy = EnemiesSpawner.GetInstance().SpawnEnemies();
+        if (newEnemy != null){
+            enemies.Add(newEnemy);
+        }
+
+        if (!quizPause) {
             if (enemies.Count > 0){  
-                float distance = 1000;
+                float distance = 1300;
                 foreach (GameObject enemy in enemies) {
                     float enemyDistance = Vector3.Distance(transform.position, enemy.transform.position);
 
@@ -46,10 +56,6 @@ public class FriendController : MonoBehaviour {
                 }
             }
         }
-    }
-
-    void Start() {
-        gameManager = GameManager.instance;
     }
 
     public void ReceiveDamage(int Damage) { // friend receive damage

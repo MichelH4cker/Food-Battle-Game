@@ -5,16 +5,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
+    public static GameManager GetInstance() {
+        return instance;
+    }
+
     public GameObject draggingObject;
     public GameObject currentContainer;
 
     public int currentAllies = 0;
-    private float quizzTime = 10.0f;
+    private float quizTime = 3.0f;
     public bool quizPause;
 
-    public static GameManager GetInstance() {
-        return instance;
-    }
 
     void Awake() {
         instance = this;
@@ -22,9 +23,12 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
-        if (Time.time > quizzTime) {
+        if (Time.time > quizTime && QuizManager.GetInstance().QuestionAndAnswersList.Count < 0) {
+            quizTime += 15.0f;
             quizPause = true;
             QuizWindowGame.GetInstance().Show();
+        } else if (quizPause == false) {
+            QuizWindowGame.GetInstance().Hide();
         }
     }
 

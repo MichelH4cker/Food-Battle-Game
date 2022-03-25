@@ -13,7 +13,7 @@ public class QuizWindowGame : MonoBehaviour {
     void Awake() {
         instance = this;
     }
-
+    
     void Start() {
         Hide();
     }

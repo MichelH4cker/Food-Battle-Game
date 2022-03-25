@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour {
+
     public  int DamageValue;
     public  int Health;
     public  float DamageCooldown;    
@@ -27,7 +28,6 @@ public class EnemyController : MonoBehaviour {
    
     public void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == 10){
-            Debug.Log(transform.position);
             StartCoroutine(Attack(collision));
             isStopped = true;
         }    
