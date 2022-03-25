@@ -10,15 +10,21 @@ public class GameManager : MonoBehaviour {
 
     public int currentAllies = 0;
     private float quizzTime = 10.0f;
-    // quizzTime será a cada 30 segundos
+    public bool quizPause;
+
+    public static GameManager GetInstance() {
+        return instance;
+    }
 
     void Awake() {
         instance = this;
+        quizPause = false;
     }
 
     void Update() {
         if (Time.time > quizzTime) {
-            Debug.Log("hora do quizz!");
+            quizPause = true;
+            QuizWindowGame.GetInstance().Show();
         }
     }
 
@@ -31,5 +37,4 @@ public class GameManager : MonoBehaviour {
             currentAllies++;
         }
     }
-
 }

@@ -9,12 +9,14 @@ public class EnemyController : MonoBehaviour {
     public  float DamageCooldown;    
     
     private bool isStopped;
+    private bool quizPause;
 
     private const int DESTROY_X_POSITION = -150;
     private const float MOVEMENT_SPEED = 0.3f;
 
     void Update() {   
-        if(!isStopped) {
+        quizPause = GameManager.GetInstance().quizPause;
+        if(!isStopped && !quizPause) {
             transform.Translate(new Vector3(MOVEMENT_SPEED * -1, 0, 0));
         }
         
