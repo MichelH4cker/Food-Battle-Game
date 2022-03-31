@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour {
 
+    public static EnemyController instance;
+
+    public static EnemyController GetInstance() {
+        return instance;
+    }
+
     public  int DamageValue;
     public  int Health;
     public  float DamageCooldown;    
@@ -15,12 +21,17 @@ public class EnemyController : MonoBehaviour {
     private const int DESTROY_X_POSITION = -150;
     private const float MOVEMENT_SPEED = 0.3f;
 
+    void Awake() {
+        instance = this;
+    }
+
     void Update() {   
         quizPause = GameManager.GetInstance().quizPause;
         if(!isStopped && !quizPause) {
             transform.Translate(new Vector3(MOVEMENT_SPEED * -1, 0, 0));
         }
         
+
         if (LeftTheMap()) {
             Destroy(this.gameObject);
         }
@@ -59,5 +70,4 @@ public class EnemyController : MonoBehaviour {
             return false;
         }
     }
-
 }

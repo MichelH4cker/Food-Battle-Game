@@ -1456,7 +1456,10 @@ MonoBehaviour:
   draggingObject: {fileID: 6340830517737638875, guid: 9b27f99e51d6091398ed34e1623ead1b, type: 3}
   currentContainer: {fileID: 0}
   currentAllies: 0
+  QUIZ_TIME: 0
   quizPause: 0
+  answered: 0
+  enemyBeingAttack: {fileID: 0}
 --- !u!1001 &372874528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11723,13 +11726,6 @@ MonoBehaviour:
     - "Sim. A aus\xEAncia de vitamina C pode resultar em anemia."
     - "A aus\xEAncia de vitamina C n\xE3o pode causar doen\xE7as"
     CorrectAnswer: 2
-  - Question: Qual o nome do desenvolvedor deste Game?
-    Answers:
-    - Matheus
-    - Gustavo
-    - Michel
-    - Alexandre
-    CorrectAnswer: 3
   - Question: Qual a melhor universidade do Brasil?
     Answers:
     - Unicamp
@@ -11737,11 +11733,19 @@ MonoBehaviour:
     - Ufscar
     - USP
     CorrectAnswer: 4
+  - Question: Qual o nome do desenvolvedor deste Game?
+    Answers:
+    - Matheus
+    - Gustavo
+    - Michel
+    - Alexandre
+    CorrectAnswer: 3
   answerOptions:
   - {fileID: 167915669}
   - {fileID: 2116140928}
   - {fileID: 236979560}
   - {fileID: 728350344}
+  QUIZ_TIME: 0
   currentQuestion: 0
   QuestionText: {fileID: 440641607}
 --- !u!1001 &2146568390

@@ -13,20 +13,28 @@ public class GameManager : MonoBehaviour {
     public GameObject currentContainer;
 
     public int currentAllies = 0;
-    private float quizTime = 3.0f;
+    public float QUIZ_TIME;
     public bool quizPause;
+    public bool answered;
 
+    public FriendController enemyBeingAttack;
 
     void Awake() {
         instance = this;
+        answered = true;
         quizPause = false;
+        QUIZ_TIME = 15.0f;
     }
 
     void Update() {
-        if (Time.time > quizTime && QuizManager.GetInstance().QuestionAndAnswersList.Count < 0) {
-            quizTime += 15.0f;
+        if (Time.time > QUIZ_TIME && QuizManager.GetInstance().QuestionAndAnswersList.Count > 0) {
             quizPause = true;
+            Time.timeScale = 0;
             QuizWindowGame.GetInstance().Show();
+            if(answered) {
+                answered = false;
+                QuizManager.GetInstance().generateQuestion();
+            }
         } else if (quizPause == false) {
             QuizWindowGame.GetInstance().Hide();
         }

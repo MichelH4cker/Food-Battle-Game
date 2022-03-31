@@ -31,8 +31,10 @@ public class EnemiesSpawner : MonoBehaviour  {
     }
 
     private void Update(){      
-        if(!quizPause){
-            SpawnEnemies();
+        quizPause = GameManager.GetInstance().quizPause;
+        
+        if(quizPause == false){
+            enemyInstance = SpawnEnemies();
         }  
     }
 
@@ -48,8 +50,7 @@ public class EnemiesSpawner : MonoBehaviour  {
 
             enemyInstance = Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
 
-            return enemyInstance;
         } 
-        return null;
+        return enemyInstance;
     }
 }

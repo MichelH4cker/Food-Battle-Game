@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnswerScript : MonoBehaviour
-{
+public class AnswerScript : MonoBehaviour {
+
     public bool isCorrect;
     public QuizManager quizManager;
 
@@ -13,7 +13,7 @@ public class AnswerScript : MonoBehaviour
             quizManager.correct();
         } else {
             Debug.Log("Wrong Answer!");
-            quizManager.correct();
+            quizManager.wrong();
         }
     }
 }

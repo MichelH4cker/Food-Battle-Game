@@ -13,6 +13,8 @@ public class QuizManager : MonoBehaviour {
 
     public List<QuestionAndAnswers> QuestionAndAnswersList;
     public GameObject[] answerOptions;
+
+    public float QUIZ_TIME;
     public int currentQuestion;
 
     public Text QuestionText;
@@ -22,12 +24,24 @@ public class QuizManager : MonoBehaviour {
     }
 
     void Start() {
+        QUIZ_TIME = GameManager.GetInstance().QUIZ_TIME;
         generateQuestion();
     }
 
     public void correct() {
         QuestionAndAnswersList.RemoveAt(currentQuestion);
+        Time.timeScale = 1;
+        GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
         GameManager.GetInstance().quizPause = false;
+        GameManager.GetInstance().answered = true;
+    }
+
+    public void wrong() {
+        Time.timeScale = 1;
+        GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
+        GameManager.GetInstance().quizPause = false;
+        GameManager.GetInstance().answered = true;
+
     }
 
     void SetAnswers() {
@@ -41,7 +55,7 @@ public class QuizManager : MonoBehaviour {
         }
     }
 
-    void generateQuestion() {
+    public void generateQuestion() {
         currentQuestion = Random.Range(0, QuestionAndAnswersList.Count);
 
         QuestionText.text = QuestionAndAnswersList[currentQuestion].Question;
