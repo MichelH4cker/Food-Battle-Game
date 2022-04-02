@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour {
     public bool quizPause;
     public bool answered;
 
-    public FriendController enemyBeingAttack;
-
     void Awake() {
         instance = this;
         answered = true;
@@ -32,8 +30,8 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 0;
             QuizWindowGame.GetInstance().Show();
             if(answered) {
-                answered = false;
                 QuizManager.GetInstance().generateQuestion();
+                answered = false;
             }
         } else if (quizPause == false) {
             QuizWindowGame.GetInstance().Hide();
@@ -43,7 +41,9 @@ public class GameManager : MonoBehaviour {
     public void PlaceObject() {
         if (draggingObject != null && currentContainer != null) {
             GameObject objectGame = Instantiate(draggingObject.GetComponent<ObjectDragging>().card.objectGame, currentContainer.transform);
+
             objectGame.GetComponent<FriendController>().enemies = currentContainer.GetComponent<ObjectContainer>().spawnPoint.enemies;
+            
             currentContainer.GetComponent<ObjectContainer>().isFull = true;
 
             currentAllies++;

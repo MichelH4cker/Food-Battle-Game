@@ -9,7 +9,7 @@ public class EnemiesSpawner : MonoBehaviour  {
         return instance;
     }
 
-    public List<GameObject> spawnPointList;
+    public List<SpawnPoint> spawnPointList;
     public List<GameObject> enemiesPrefabs; 
 
     public GameObject enemyInstance;
@@ -34,11 +34,11 @@ public class EnemiesSpawner : MonoBehaviour  {
         quizPause = GameManager.GetInstance().quizPause;
         
         if(quizPause == false){
-            enemyInstance = SpawnEnemies();
+            SpawnEnemies();
         }  
     }
 
-    public GameObject SpawnEnemies() {
+    public void SpawnEnemies() {
         spawnTime += Time.deltaTime;
             
         if (spawnTime > randomTime) {
@@ -50,7 +50,9 @@ public class EnemiesSpawner : MonoBehaviour  {
 
             enemyInstance = Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
 
+            spawnPointList[spawnPointIndex].enemies.Add(enemyInstance);
+
         } 
-        return enemyInstance;
     }
+
 }

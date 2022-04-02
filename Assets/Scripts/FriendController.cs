@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class FriendController : MonoBehaviour {
 
     public GameObject bullet;
-    //destroy bullet in x: 1500
     public GameObject toAttack;
 
     public GameManager gameManager;
@@ -21,22 +20,12 @@ public class FriendController : MonoBehaviour {
     private float attackTime;
     private bool quizPause;
 
-    GameObject newEnemy;
-    
     void Start() {
         gameManager = GameManager.instance;
         quizPause = GameManager.GetInstance().quizPause;
     }
 
     private void Update() {
-        newEnemy = EnemiesSpawner.GetInstance().SpawnEnemies();
-        if(newEnemy == null){
-            Debug.Log("tá nulo");
-        }
-        if (newEnemy != null){
-            enemies.Add(newEnemy);
-        }
-
         if (!quizPause) {
             if (enemies.Count > 0){  
                 float distance = 1300;
