@@ -14,13 +14,12 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public Text RemainingAllyText;
 
     public int MAX_ALLY;
-    int currentNumberAlly;
+    public int alliesLeft;
 
     private void Start() {
         RemainingAllyText.text = MAX_ALLY + " X";
-        currentNumberAlly = MAX_ALLY;
+        alliesLeft = MAX_ALLY;
         gameManager = GameManager.instance; 
-
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -30,30 +29,34 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public void OnPointerDown(PointerEventData eventData) {
         objectDragInstance = Instantiate(objectDrag, canvas.transform);
         
-        if (gameManager.currentAllies < MAX_ALLY) {
+        if (alliesLeft > 0) {
             objectDragInstance.transform.position = Input.mousePosition;
             objectDragInstance.GetComponent<ObjectDragging>().card = this;
             
             gameManager.draggingObject = objectDragInstance; 
             
-            currentNumberAlly--;
-            RemainingAllyText.text = currentNumberAlly + " X";
-            
+            if (alliesLeft != 0) {
+                alliesLeft--;
+                RemainingAllyText.text = alliesLeft + " X";
+            }
             Debug.Log("Máximo de aliados nessa carta é de: " + MAX_ALLY);
         } else {
+            // mostrar na tela que não é mais possível colocar personagens no jogo
             Debug.Log("ERRO!");
         }
 
     }
 
     public void OnPointerUp(PointerEventData eventData) {
-        gameManager.PlaceObject();
-        gameManager.draggingObject = null; 
+        if (alliesLeft > 0) {
+            gameManager.PlaceObject();
+        }
         Destroy(objectDragInstance);
+        gameManager.draggingObject = null; 
         
         if (GameManager.GetInstance().positioned == false){
-            currentNumberAlly++;
-            RemainingAllyText.text = currentNumberAlly + " X";
+            alliesLeft++;
+            RemainingAllyText.text = alliesLeft + " X";
         }
     }
 }
