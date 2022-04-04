@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+    
     public static GameManager instance;
 
     public static GameManager GetInstance() {
@@ -12,24 +13,30 @@ public class GameManager : MonoBehaviour {
     public GameObject draggingObject;
     public GameObject currentContainer;
 
-    public int currentAllies = 0;
+    public float GAME_MAX_TIME = 120.0f;
     public float QUIZ_TIME;
+    public int currentAllies = 0;
     public bool quizPause;
     public bool answered;
 
+    int amountOfQuestions;
+
     void Awake() {
         instance = this;
+        amountOfQuestions = 0;
         answered = true;
         quizPause = false;
         QUIZ_TIME = 15.0f;
     }
 
     void Update() {
-        if (Time.time > QUIZ_TIME && QuizManager.GetInstance().QuestionAndAnswersList.Count > 0) {
+        amountOfQuestions = QuizManager.GetInstance().QuestionAndAnswersList.Count;
+
+        if (Time.timeSinceLevelLoad > QUIZ_TIME && amountOfQuestions > 0) {
             quizPause = true;
-            Time.timeScale = 0;
             QuizWindowGame.GetInstance().Show();
             if(answered) {
+                Time.timeScale = 0;
                 QuizManager.GetInstance().generateQuestion();
                 answered = false;
             }
