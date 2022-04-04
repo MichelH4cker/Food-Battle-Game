@@ -11,6 +11,8 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public GameObject objectGame;
     public Canvas canvas;
 
+    private int MAX_ALLIES = 5;
+
     private void Start() {
         gameManager = GameManager.instance; 
     }
@@ -21,10 +23,16 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 
     public void OnPointerDown(PointerEventData eventData) {
         objectDragInstance = Instantiate(objectDrag, canvas.transform);
-        objectDragInstance.transform.position = Input.mousePosition;
-        objectDragInstance.GetComponent<ObjectDragging>().card = this;
+        
+        if (gameManager.currentAllies < MAX_ALLIES) {
+            objectDragInstance.transform.position = Input.mousePosition;
+            objectDragInstance.GetComponent<ObjectDragging>().card = this;
+            
+            gameManager.draggingObject = objectDragInstance; 
+        } else {
+            Debug.Log("ERRO!");
+        }
 
-        gameManager.draggingObject = objectDragInstance; 
     }
 
     public void OnPointerUp(PointerEventData eventData) {

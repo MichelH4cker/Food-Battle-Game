@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7837777155249177866}
   - component: {fileID: 7837777155249177860}
   - component: {fileID: 7837777155249177861}
-  m_Layer: 5
+  - component: {fileID: -1403856791053882051}
+  - component: {fileID: 1613019914882129263}
+  m_Layer: 10
   m_Name: HeartObjectGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 7837777155249177867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65521, y: 0.65521, z: 0.65521}
+  m_LocalScale: {x: 0.640912, y: 0.640912, z: 0.640912}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,3 +77,50 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!61 &-1403856791053882051
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837777155249177867}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100}
+  m_EdgeRadius: 0
+--- !u!114 &1613019914882129263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7837777155249177867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309d4ed545dd3cd5a91a4a6cca111223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 261668489877197296, guid: dc7b9a695ae47e1e49814b68154cbc37, type: 3}
+  toAttack: {fileID: 0}
+  enemies: []
+  isAttacking: 0
+  Health: 5
+  DamageValue: 200
+  attackCooldown: 3.5
+  mainImage: {fileID: 7837777155249177861}
+  blinkImage: {fileID: 21300000, guid: f3e787b9cc6933ae4a435ea2c184f095, type: 3}

@@ -15,9 +15,9 @@ TagManager:
   - 
   - DraggingObject
   - Container
-  - 
-  - 
-  - 
+  - Object
+  - Enemy
+  - Bullet
   - 
   - 
   - 
