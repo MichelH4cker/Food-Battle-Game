@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
     public int currentAllies = 0;
     public bool quizPause;
     public bool answered;
+    public bool positioned;
 
     int amountOfQuestions;
 
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour {
         instance = this;
         amountOfQuestions = 0;
         answered = true;
+        positioned = false;
         quizPause = false;
         QUIZ_TIME = 15.0f;
     }
@@ -53,7 +55,10 @@ public class GameManager : MonoBehaviour {
             
             currentContainer.GetComponent<ObjectContainer>().isFull = true;
 
+            positioned = true;
             currentAllies++;
+        } else {
+            positioned = false;
         }
     }
 }

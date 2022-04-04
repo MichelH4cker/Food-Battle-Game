@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameDetails : MonoBehaviour {
     
     public Text RemainingTimeText;
+    public Text RemainingAllyText;
     private float RemainingTimeFloat;
  
     void Start() {

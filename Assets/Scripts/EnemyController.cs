@@ -31,7 +31,6 @@ public class EnemyController : MonoBehaviour {
             transform.Translate(new Vector3(MOVEMENT_SPEED * -1, 0, 0));
         }
         
-
         if (LeftTheMap()) {
             Destroy(this.gameObject);
         }
