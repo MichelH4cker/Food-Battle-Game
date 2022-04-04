@@ -3,9 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemiesSpawner : MonoBehaviour  {
-    public List<GameObject> spawnPointList;
+    private static EnemiesSpawner instance;
+
+    public static EnemiesSpawner GetInstance() {
+        return instance;
+    }
+
+    public List<SpawnPoint> spawnPointList;
     public List<GameObject> enemiesPrefabs; 
 
+    public GameObject enemyInstance;
+    
+    private bool quizPause;
+ 
     int spawnPointIndex;
     int enemyIndex;
     float spawnTime = 0;
@@ -13,19 +23,36 @@ public class EnemiesSpawner : MonoBehaviour  {
 
     void Awake() {
         randomTime = 0;
+        instance = this;
     }
 
-    private void Update(){        
-        spawnTime += Time.deltaTime;
+    void Start() {
+        quizPause = GameManager.GetInstance().quizPause;
+    }
+
+    private void Update(){      
+        quizPause = GameManager.GetInstance().quizPause;
         
+        if(quizPause == false){
+            SpawnEnemies();
+        }  
+    }
+
+    public void SpawnEnemies() {
+        spawnTime += Time.deltaTime;
+            
         if (spawnTime > randomTime) {
             spawnTime = 0;
-            randomTime = Random.Range(6,10);
+            randomTime = Random.Range(8,13);
 
             spawnPointIndex = Random.Range(0,5);
             enemyIndex = Random.Range(0,3);
 
-            Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
+            enemyInstance = Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
+
+            spawnPointList[spawnPointIndex].enemies.Add(enemyInstance);
+
         } 
     }
+
 }

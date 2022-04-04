@@ -121,13 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35258a14ab34a25c783744a482860160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FinalDestination: {x: 0, y: 0, z: 0}
+  gameManager: {fileID: 0}
   DamageValue: 1
   Health: 3000
   DamageCooldown: 2
-  movementSpeed: 0.4
-  mainImage: {fileID: 0}
-  blinkImage: {fileID: 0}
 --- !u!50 &1831198287783652428
 Rigidbody2D:
   serializedVersion: 4
@@ -165,10 +162,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.8, y: 12.8}
+    newSize: {x: 12.8, y: 12.8}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
