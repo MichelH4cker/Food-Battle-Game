@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
         return instance;
     }
 
+    public List<GameObject> allies;
+
     public GameObject draggingObject;
     public GameObject currentContainer;
 
@@ -50,6 +52,8 @@ public class GameManager : MonoBehaviour {
         if (draggingObject != null && currentContainer != null) {
             GameObject objectGame = Instantiate(draggingObject.GetComponent<ObjectDragging>().card.objectGame, currentContainer.transform);
 
+            allies.Add(objectGame);
+
             objectGame.GetComponent<FriendController>().enemies = currentContainer.GetComponent<ObjectContainer>().spawnPoint.enemies;
             
             currentContainer.GetComponent<ObjectContainer>().isFull = true;
@@ -58,5 +62,19 @@ public class GameManager : MonoBehaviour {
         } else {
             positioned = false;
         }
+    }
+
+
+    public void DestroyAlly() {
+        Debug.Log("entrou aqui pelo menos");
+        //;GameObject allyToBeDeleted = allies[Random.Range(0, enemies.Count - 1)];
+
+        //objectGame.GetComponent<FriendController>().enemies = currentContainer.GetComponent<ObjectContainer>().spawnPoint.enemies;
+
+
+        GameObject allyToBeDeleted = allies[Random.Range(0, allies.Count - 1)];
+        allies.Remove(allyToBeDeleted);
+        Destroy(allyToBeDeleted);
+
     }
 }

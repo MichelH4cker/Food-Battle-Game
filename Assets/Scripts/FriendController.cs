@@ -5,11 +5,18 @@ using UnityEngine.UI;
 
 public class FriendController : MonoBehaviour {
 
+    public static FriendController instance;
+
+    public static FriendController GetInstance() {
+        return instance;
+    }
+
     public GameObject bullet;
     public GameObject toAttack;
 
     public GameManager gameManager;
 
+    public List<GameObject> allies;
     public List<GameObject> enemies;
 
     public bool isAttacking;
@@ -19,6 +26,10 @@ public class FriendController : MonoBehaviour {
 
     private float attackTime;
     private bool quizPause;
+
+    void Awake() {
+        instance = this;
+    }
 
     void Start() {
         gameManager = GameManager.instance;
@@ -58,4 +69,5 @@ public class FriendController : MonoBehaviour {
             Health = Health - Damage;
         }
     }
+
 }

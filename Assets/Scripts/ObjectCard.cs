@@ -29,7 +29,7 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public void OnPointerDown(PointerEventData eventData) {
         objectDragInstance = Instantiate(objectDrag, canvas.transform);
         
-        if (alliesLeft > 0) {
+        if (alliesLeft >= 0) {
             objectDragInstance.transform.position = Input.mousePosition;
             objectDragInstance.GetComponent<ObjectDragging>().card = this;
             
@@ -41,8 +41,8 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
             }
             Debug.Log("Máximo de aliados nessa carta é de: " + MAX_ALLY);
         } else {
-            // mostrar na tela que não é mais possível colocar personagens no jogo
             Debug.Log("ERRO!");
+            GameDetails.GetInstance().ShowErrorMessage();
         }
 
     }
