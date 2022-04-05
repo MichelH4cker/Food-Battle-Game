@@ -10,14 +10,16 @@ public class GameManager : MonoBehaviour {
         return instance;
     }
 
+    public List<GameObject> allies;
+
     public GameObject draggingObject;
     public GameObject currentContainer;
 
     public float GAME_MAX_TIME = 120.0f;
     public float QUIZ_TIME;
-    public int currentAllies = 0;
     public bool quizPause;
     public bool answered;
+    public bool positioned;
 
     int amountOfQuestions;
 
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour {
         instance = this;
         amountOfQuestions = 0;
         answered = true;
+        positioned = false;
         quizPause = false;
         QUIZ_TIME = 15.0f;
     }
@@ -49,11 +52,29 @@ public class GameManager : MonoBehaviour {
         if (draggingObject != null && currentContainer != null) {
             GameObject objectGame = Instantiate(draggingObject.GetComponent<ObjectDragging>().card.objectGame, currentContainer.transform);
 
+            allies.Add(objectGame);
+
             objectGame.GetComponent<FriendController>().enemies = currentContainer.GetComponent<ObjectContainer>().spawnPoint.enemies;
             
             currentContainer.GetComponent<ObjectContainer>().isFull = true;
 
-            currentAllies++;
+            positioned = true;
+        } else {
+            positioned = false;
         }
+    }
+
+
+    public void DestroyAlly() {
+        Debug.Log("entrou aqui pelo menos");
+        //;GameObject allyToBeDeleted = allies[Random.Range(0, enemies.Count - 1)];
+
+        //objectGame.GetComponent<FriendController>().enemies = currentContainer.GetComponent<ObjectContainer>().spawnPoint.enemies;
+
+
+        GameObject allyToBeDeleted = allies[Random.Range(0, allies.Count - 1)];
+        allies.Remove(allyToBeDeleted);
+        Destroy(allyToBeDeleted);
+
     }
 }

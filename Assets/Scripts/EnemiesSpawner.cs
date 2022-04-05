@@ -51,7 +51,6 @@ public class EnemiesSpawner : MonoBehaviour  {
             enemyInstance = Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
 
             spawnPointList[spawnPointIndex].enemies.Add(enemyInstance);
-
         } 
     }
 

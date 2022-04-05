@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler {
@@ -10,10 +11,14 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public GameObject objectDrag;
     public GameObject objectGame;
     public Canvas canvas;
+    public Text RemainingAllyText;
 
-    private int MAX_ALLIES = 5;
+    public int MAX_ALLY;
+    public int alliesLeft;
 
     private void Start() {
+        RemainingAllyText.text = MAX_ALLY + " X";
+        alliesLeft = MAX_ALLY;
         gameManager = GameManager.instance; 
     }
 
@@ -24,20 +29,34 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public void OnPointerDown(PointerEventData eventData) {
         objectDragInstance = Instantiate(objectDrag, canvas.transform);
         
-        if (gameManager.currentAllies < MAX_ALLIES) {
+        if (alliesLeft >= 0) {
             objectDragInstance.transform.position = Input.mousePosition;
             objectDragInstance.GetComponent<ObjectDragging>().card = this;
             
             gameManager.draggingObject = objectDragInstance; 
+            
+            if (alliesLeft != 0) {
+                alliesLeft--;
+                RemainingAllyText.text = alliesLeft + " X";
+            }
+            Debug.Log("Máximo de aliados nessa carta é de: " + MAX_ALLY);
         } else {
             Debug.Log("ERRO!");
+            GameDetails.GetInstance().ShowErrorMessage();
         }
 
     }
 
     public void OnPointerUp(PointerEventData eventData) {
-        gameManager.PlaceObject();
-        gameManager.draggingObject = null; 
+        if (alliesLeft > 0) {
+            gameManager.PlaceObject();
+        }
         Destroy(objectDragInstance);
+        gameManager.draggingObject = null; 
+        
+        if (GameManager.GetInstance().positioned == false){
+            alliesLeft++;
+            RemainingAllyText.text = alliesLeft + " X";
+        }
     }
 }
