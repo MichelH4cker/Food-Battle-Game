@@ -19,6 +19,8 @@ public class FriendController : MonoBehaviour {
     public List<GameObject> allies;
     public List<GameObject> enemies;
 
+    public Text HealthText;
+
     public Image defaultImage;
     public Sprite blinkImage;
     public Sprite defaultImageSprite;
@@ -33,6 +35,7 @@ public class FriendController : MonoBehaviour {
 
     void Awake() {
         instance = this;
+        HealthText.text = "x" + Health;
     }
 
     void Start() {
@@ -71,6 +74,7 @@ public class FriendController : MonoBehaviour {
             Destroy(this.gameObject);
         } else {
             Health = Health - Damage;
+            HealthText.text = "x" + Health;
             StartCoroutine(BlinkAlly(null, 0.15f, 1, false));
         }
     }

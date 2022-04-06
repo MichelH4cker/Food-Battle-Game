@@ -11,22 +11,26 @@ public class EnemyController : MonoBehaviour {
         return instance;
     }
 
+    public Text HealthText;
+
     public Image defaultImage;
     public Sprite blinkImage;
     public Sprite defaultImageSprite;
 
-    public  int DamageValue;
-    public  int Health;
-    public  float DamageCooldown;    
+    public int DamageValue;
+    public float DamageCooldown;    
     
     private bool isStopped;
     private bool quizPause;
 
+    private int RemainingHeartsInt;
+    private int Health = 5;
     private const int DESTROY_X_POSITION = -150;
     private const float MOVEMENT_SPEED = 0.3f;
 
     void Awake() {
         instance = this;
+        HealthText.text = "x" + Health;
     }
 
     void Update() {   
@@ -63,6 +67,7 @@ public class EnemyController : MonoBehaviour {
             Destroy(this.gameObject);
         } else {
             Health = Health - Damage;
+            HealthText.text = "x" + Health;
             StartCoroutine(BlinkEnemy(null, 0.15f, 1, false));
         }
     }
