@@ -117,10 +117,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 261668489877197296, guid: dc7b9a695ae47e1e49814b68154cbc37, type: 3}
   toAttack: {fileID: 0}
+  gameManager: {fileID: 0}
+  allies: []
   enemies: []
+  defaultImage: {fileID: 7047856754879834890}
+  blinkImage: {fileID: 21300000, guid: 6ee5034ad592070f7819a941400c99db, type: 3}
+  defaultImageSprite: {fileID: 21300000, guid: ae367b07a47378111923d1e984be89db, type: 3}
   isAttacking: 0
   Health: 5
   DamageValue: 200
   attackCooldown: 3.5
-  mainImage: {fileID: 7047856754879834890}
-  blinkImage: {fileID: 21300000, guid: 6ee5034ad592070f7819a941400c99db, type: 3}

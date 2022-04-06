@@ -12176,28 +12176,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestionAndAnswersList:
-  - Question: "A defici\xEAncia de vitamina C no organismo pode causar alguma doen\xE7a?
-      Qual?"
+  - Question: Qual a melhor universiadade do Brasil?
     Answers:
-    - "Sim. A aus\xEAncia de vitamina C pode resultar em raquitismo."
-    - "Sim. A aus\xEAncia de vitamina C pode resultar em escorbuto."
-    - "Sim. A aus\xEAncia de vitamina C pode resultar em anemia."
-    - "A aus\xEAncia de vitamina C n\xE3o pode causar doen\xE7as"
-    CorrectAnswer: 2
-  - Question: Qual a melhor universidade do Brasil?
-    Answers:
-    - Unicamp
-    - Unesp
-    - Ufscar
+    - UNICAMP
+    - UNESP
     - USP
-    CorrectAnswer: 4
-  - Question: Qual o nome do desenvolvedor deste Game?
+    - UFSCAR
+    CorrectAnswer: 3
+  - Question: Qual o criador desse jogo?
     Answers:
+    - Michel
     - Matheus
     - Gustavo
-    - Michel
-    - Alexandre
-    CorrectAnswer: 3
+    - Ninguem
+    CorrectAnswer: 1
   answerOptions:
   - {fileID: 167915669}
   - {fileID: 2116140928}

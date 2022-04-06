@@ -11,6 +11,10 @@ public class EnemyController : MonoBehaviour {
         return instance;
     }
 
+    public Image defaultImage;
+    public Sprite blinkImage;
+    public Sprite defaultImageSprite;
+
     public  int DamageValue;
     public  int Health;
     public  float DamageCooldown;    
@@ -59,6 +63,19 @@ public class EnemyController : MonoBehaviour {
             Destroy(this.gameObject);
         } else {
             Health = Health - Damage;
+            StartCoroutine(BlinkEnemy(null, 0.15f, 1, false));
+        }
+    }
+
+    public IEnumerator BlinkEnemy(GameObject enemy, float blinkDelay, int timesToBlink, bool destroy){
+        for (int i = 0; i < timesToBlink; i++){
+            defaultImage.sprite = blinkImage;
+            yield return new WaitForSeconds(blinkDelay);
+            defaultImage.sprite = defaultImageSprite;
+            yield return new WaitForSeconds(blinkDelay);
+        }
+        if(destroy){
+            Destroy(enemy);
         }
     }
 

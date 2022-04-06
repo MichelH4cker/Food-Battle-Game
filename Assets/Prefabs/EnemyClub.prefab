@@ -121,7 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35258a14ab34a25c783744a482860160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  defaultImage: {fileID: 9169673312699865992}
+  blinkImage: {fileID: 21300000, guid: 142c72e1a472e252cb84d4e89e1b5248, type: 3}
+  defaultImageSprite: {fileID: 21300000, guid: 0a22dce2656a15fbfa938f2c61bd960c, type: 3}
   DamageValue: 1
   Health: 3000
   DamageCooldown: 2
