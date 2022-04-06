@@ -79,6 +79,11 @@ public class FriendController : MonoBehaviour {
         }
     }
 
+    public void DestroyAlly(){
+        Debug.Log("vou destruir um aliado aleatório aí");
+        StartCoroutine(BlinkAlly(null, 0.15f, 3, true));
+    }
+
     public IEnumerator BlinkAlly(GameObject ally, float blinkDelay, int timesToBlink, bool destroy){
         for (int i = 0; i < timesToBlink; i++){
             defaultImage.sprite = blinkImage;
@@ -87,7 +92,7 @@ public class FriendController : MonoBehaviour {
             yield return new WaitForSeconds(blinkDelay);
         }
         if(destroy){
-            Destroy(ally);
+            Destroy(this.gameObject);
         }
     }
     
