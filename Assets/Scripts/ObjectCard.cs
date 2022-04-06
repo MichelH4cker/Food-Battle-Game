@@ -29,17 +29,16 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public void OnPointerDown(PointerEventData eventData) {
         objectDragInstance = Instantiate(objectDrag, canvas.transform);
         
-        if (alliesLeft >= 0) {
+        if (alliesLeft > 0) {
             objectDragInstance.transform.position = Input.mousePosition;
             objectDragInstance.GetComponent<ObjectDragging>().card = this;
             
             gameManager.draggingObject = objectDragInstance; 
             
-            if (alliesLeft != 0) {
+            if(GameManager.GetInstance().positioned || alliesLeft == MAX_ALLY){
                 alliesLeft--;
                 RemainingAllyText.text = alliesLeft + " X";
             }
-            Debug.Log("Máximo de aliados nessa carta é de: " + MAX_ALLY);
         } else {
             Debug.Log("ERRO!");
             GameDetails.GetInstance().ShowErrorMessage();
@@ -48,15 +47,16 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     }
 
     public void OnPointerUp(PointerEventData eventData) {
-        if (alliesLeft > 0) {
+        if (alliesLeft >= 0) {
             gameManager.PlaceObject();
         }
+
         Destroy(objectDragInstance);
         gameManager.draggingObject = null; 
-        
+        /*
         if (GameManager.GetInstance().positioned == false){
             alliesLeft++;
             RemainingAllyText.text = alliesLeft + " X";
-        }
+        }*/
     }
 }
