@@ -32,6 +32,7 @@ public class FriendController : MonoBehaviour {
 
     private float attackTime;
     private bool quizPause;
+    private const float BLINK_DELAY = 0.15f;
 
     void Awake() {
         instance = this;
@@ -75,21 +76,20 @@ public class FriendController : MonoBehaviour {
         } else {
             Health = Health - Damage;
             HealthText.text = "x" + Health;
-            StartCoroutine(BlinkAlly(null, 0.15f, 1, false));
+            StartCoroutine(BlinkAlly(1, false));
         }
     }
 
     public void DestroyAlly(){
-        Debug.Log("vou destruir um aliado aleatório aí");
-        StartCoroutine(BlinkAlly(null, 0.15f, 3, true));
+        StartCoroutine(BlinkAlly(3, true));
     }
 
-    public IEnumerator BlinkAlly(GameObject ally, float blinkDelay, int timesToBlink, bool destroy){
+    public IEnumerator BlinkAlly(int timesToBlink, bool destroy){
         for (int i = 0; i < timesToBlink; i++){
             defaultImage.sprite = blinkImage;
-            yield return new WaitForSeconds(blinkDelay);
+            yield return new WaitForSeconds(BLINK_DELAY);
             defaultImage.sprite = defaultImageSprite;
-            yield return new WaitForSeconds(blinkDelay);
+            yield return new WaitForSeconds(BLINK_DELAY);
         }
         if(destroy){
             Destroy(this.gameObject);

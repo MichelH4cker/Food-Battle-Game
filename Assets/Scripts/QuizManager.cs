@@ -34,6 +34,7 @@ public class QuizManager : MonoBehaviour {
         GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
         GameManager.GetInstance().quizPause = false;
         GameManager.GetInstance().answered = true;
+        EnemyController.GetInstance().DestroyEnemy();
     }
 
     public void wrong() {

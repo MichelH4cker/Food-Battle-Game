@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour {
     public GameObject draggingObject;
     public GameObject currentContainer;
 
-    private int TIMES_TO_BLINK = 3;
-    private float BLINK_DELAY = 0.3f;
     public float GAME_MAX_TIME = 120.0f;
     public float QUIZ_TIME;
     public bool quizPause;
@@ -63,14 +61,6 @@ public class GameManager : MonoBehaviour {
             positioned = true;
         } else {
             positioned = false;
-        }
-    }
-
-    public void DestroyAlly() {
-        if (allies.Count > 0){
-            GameObject allyToBeDeleted = allies[Random.Range(0, allies.Count - 1)];
-            StartCoroutine(FriendController.GetInstance().BlinkAlly(allyToBeDeleted, BLINK_DELAY, TIMES_TO_BLINK, true));
-            allies.Remove(allyToBeDeleted);
         }
     }
 }

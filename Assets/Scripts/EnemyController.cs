@@ -27,6 +27,7 @@ public class EnemyController : MonoBehaviour {
     private int Health = 5;
     private const int DESTROY_X_POSITION = 600;
     private const float MOVEMENT_SPEED = 0.3f;
+    private const float BLINK_DELAY = 0.15f;
 
     void Awake() {
         instance = this;
@@ -68,19 +69,23 @@ public class EnemyController : MonoBehaviour {
         } else {
             Health = Health - Damage;
             HealthText.text = "x" + Health;
-            StartCoroutine(BlinkEnemy(null, 0.15f, 1, false));
+            StartCoroutine(BlinkEnemy(1, false));
         }
     }
 
-    public IEnumerator BlinkEnemy(GameObject enemy, float blinkDelay, int timesToBlink, bool destroy){
+    public void DestroyEnemy(){
+        StartCoroutine(BlinkEnemy(3, true));
+    }
+
+    public IEnumerator BlinkEnemy(int timesToBlink, bool destroy){
         for (int i = 0; i < timesToBlink; i++){
             defaultImage.sprite = blinkImage;
-            yield return new WaitForSeconds(blinkDelay);
+            yield return new WaitForSeconds(BLINK_DELAY);
             defaultImage.sprite = defaultImageSprite;
-            yield return new WaitForSeconds(blinkDelay);
+            yield return new WaitForSeconds(BLINK_DELAY);
         }
         if(destroy){
-            Destroy(enemy);
+            Destroy(this.gameObject);
         }
     }
 
