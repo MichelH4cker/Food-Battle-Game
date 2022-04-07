@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
 
     public float GAME_MAX_TIME = 120.0f;
     public float QUIZ_TIME;
+    public int livingAllies = 0;
     public bool quizPause;
     public bool answered;
     public bool positioned;
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour {
             currentContainer.GetComponent<ObjectContainer>().isFull = true;
 
             positioned = true;
+            livingAllies++;
         } else {
             positioned = false;
         }

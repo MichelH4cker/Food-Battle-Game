@@ -18,31 +18,40 @@ public class QuizManager : MonoBehaviour {
     public int currentQuestion;
 
     public Text QuestionText;
+    public Text CorrectFeedbackText;
+    public Text WrongFeedbackText;
 
     void Awake() {
         instance = this;
+        CorrectFeedbackText.gameObject.SetActive(false);
+        WrongFeedbackText.gameObject.SetActive(false);
     }
 
     void Start() {
         QUIZ_TIME = GameManager.GetInstance().QUIZ_TIME;
+
         generateQuestion();
     }
 
-    public void correct() {
+    public void Correct() {
         QuestionAndAnswersList.RemoveAt(currentQuestion);
         Time.timeScale = 1;
         GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
         GameManager.GetInstance().quizPause = false;
         GameManager.GetInstance().answered = true;
         EnemyController.GetInstance().DestroyEnemy();
+        StartCoroutine(AnswerFeedback(true));
     }
 
-    public void wrong() {
+    public void Wrong() {
         Time.timeScale = 1;
         GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
         GameManager.GetInstance().quizPause = false;
         GameManager.GetInstance().answered = true;
-        FriendController.GetInstance().DestroyAlly();
+        if(GameManager.GetInstance().livingAllies > 0) {
+            FriendController.GetInstance().DestroyAlly();
+            StartCoroutine(AnswerFeedback(false));
+        }        
     }
 
     void SetAnswers() {
@@ -62,6 +71,19 @@ public class QuizManager : MonoBehaviour {
         QuestionText.text = QuestionAndAnswersList[currentQuestion].Question;
 
         SetAnswers();
+    }
+
+
+    public IEnumerator AnswerFeedback(bool correct) {
+        if(correct) {
+            CorrectFeedbackText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            CorrectFeedbackText.gameObject.SetActive(false);
+        } else {
+            WrongFeedbackText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            WrongFeedbackText.gameObject.SetActive(false);
+        }
     }
 
 }

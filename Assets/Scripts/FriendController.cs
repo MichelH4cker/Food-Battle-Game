@@ -73,6 +73,7 @@ public class FriendController : MonoBehaviour {
     public void ReceiveDamage(int Damage) { // friend receive damage
         if(Health - Damage <= 0) {
             Destroy(this.gameObject);
+            GameManager.GetInstance().livingAllies--;
         } else {
             Health = Health - Damage;
             HealthText.text = "x" + Health;
@@ -82,6 +83,7 @@ public class FriendController : MonoBehaviour {
 
     public void DestroyAlly(){
         StartCoroutine(BlinkAlly(3, true));
+        GameManager.GetInstance().livingAllies--;
     }
 
     public IEnumerator BlinkAlly(int timesToBlink, bool destroy){
@@ -95,5 +97,4 @@ public class FriendController : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
-    
 }

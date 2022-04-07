@@ -6,6 +6,12 @@ using UnityEngine.EventSystems;
 
 public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler {
 
+    public static ObjectCard instance;
+
+    public static ObjectCard GetInstance() {
+        return instance;
+    }
+
     private GameManager gameManager;
     private GameObject objectDragInstance;
     public GameObject objectDrag;
@@ -15,6 +21,10 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 
     public int MAX_ALLY;
     public int alliesLeft;
+
+    void Awake(){
+        instance = this;
+    }
 
     private void Start() {
         RemainingAllyText.text = MAX_ALLY + " X";
