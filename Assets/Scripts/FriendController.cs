@@ -87,6 +87,7 @@ public class FriendController : MonoBehaviour {
     }
 
     public IEnumerator BlinkAlly(int timesToBlink, bool destroy){
+        yield return new WaitForSeconds(3f);
         for (int i = 0; i < timesToBlink; i++){
             defaultImage.sprite = blinkImage;
             yield return new WaitForSeconds(BLINK_DELAY);

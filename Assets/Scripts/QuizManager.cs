@@ -39,8 +39,8 @@ public class QuizManager : MonoBehaviour {
         GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
         GameManager.GetInstance().quizPause = false;
         GameManager.GetInstance().answered = true;
-        EnemyController.GetInstance().DestroyEnemy();
         StartCoroutine(AnswerFeedback(true));
+        EnemyController.GetInstance().DestroyEnemy();
     }
 
     public void Wrong() {
@@ -49,8 +49,8 @@ public class QuizManager : MonoBehaviour {
         GameManager.GetInstance().quizPause = false;
         GameManager.GetInstance().answered = true;
         if(GameManager.GetInstance().livingAllies > 0) {
-            FriendController.GetInstance().DestroyAlly();
             StartCoroutine(AnswerFeedback(false));
+            FriendController.GetInstance().DestroyAlly();
         }        
     }
 
@@ -84,6 +84,7 @@ public class QuizManager : MonoBehaviour {
             yield return new WaitForSeconds(3f);
             WrongFeedbackText.gameObject.SetActive(false);
         }
+        yield return new WaitForSeconds(3f);
     }
 
 }
