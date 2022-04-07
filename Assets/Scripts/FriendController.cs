@@ -19,6 +19,12 @@ public class FriendController : MonoBehaviour {
     public List<GameObject> allies;
     public List<GameObject> enemies;
 
+    public Text HealthText;
+
+    public Image defaultImage;
+    public Sprite blinkImage;
+    public Sprite defaultImageSprite;
+
     public bool isAttacking;
     public int Health;
     public int DamageValue;
@@ -26,9 +32,11 @@ public class FriendController : MonoBehaviour {
 
     private float attackTime;
     private bool quizPause;
+    private const float BLINK_DELAY = 0.15f;
 
     void Awake() {
         instance = this;
+        HealthText.text = "x" + Health;
     }
 
     void Start() {
@@ -65,9 +73,29 @@ public class FriendController : MonoBehaviour {
     public void ReceiveDamage(int Damage) { // friend receive damage
         if(Health - Damage <= 0) {
             Destroy(this.gameObject);
+            GameManager.GetInstance().livingAllies--;
         } else {
             Health = Health - Damage;
+            HealthText.text = "x" + Health;
+            StartCoroutine(BlinkAlly(1, false));
         }
     }
 
+    public void DestroyAlly(){
+        StartCoroutine(BlinkAlly(3, true));
+        GameManager.GetInstance().livingAllies--;
+    }
+
+    public IEnumerator BlinkAlly(int timesToBlink, bool destroy){
+        yield return new WaitForSeconds(3f);
+        for (int i = 0; i < timesToBlink; i++){
+            defaultImage.sprite = blinkImage;
+            yield return new WaitForSeconds(BLINK_DELAY);
+            defaultImage.sprite = defaultImageSprite;
+            yield return new WaitForSeconds(BLINK_DELAY);
+        }
+        if(destroy){
+            Destroy(this.gameObject);
+        }
+    }
 }
