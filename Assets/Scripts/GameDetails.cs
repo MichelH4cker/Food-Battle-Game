@@ -14,6 +14,8 @@ public class GameDetails : MonoBehaviour {
     public Text RemainingTimeText;
     public Text ErrorMessageText;
 
+    public bool PlayerWon;
+
     private float RemainingTimeFloat;
     private float ErrorMessageDelay;
     private float counterTime;
@@ -32,6 +34,7 @@ public class GameDetails : MonoBehaviour {
 
     void Update() {
         if(RemainingTimeFloat <= 0) {
+            PlayerWon = true;
             SceneLoader.Load(SceneLoader.Scene.EndScene);
         }
         RemainingTimeText.text = "TEMPO RESTANTE: " + RemainingTimeFloat + "s";     
