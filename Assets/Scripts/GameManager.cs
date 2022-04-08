@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
     public GameObject draggingObject;
     public GameObject currentContainer;
 
-    public float GAME_MAX_TIME = 120.0f;
+    public float GAME_MAX_TIME;
     public float QUIZ_TIME;
     public int livingAllies = 0;
     public bool quizPause;
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour {
         positioned = false;
         quizPause = false;
         QUIZ_TIME = 15.0f;
+        GAME_MAX_TIME = 120.0f;
     }
 
     void Update() {

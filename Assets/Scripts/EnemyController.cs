@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour {
 
     public int DamageValue;
     public float DamageCooldown;    
-    
+
     private bool isStopped;
     private bool quizPause;
 
@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour {
         }
         
         if (LeftTheMap()) {
+            SceneLoader.Load(SceneLoader.Scene.EndScene);
             Destroy(this.gameObject);
         }
     }

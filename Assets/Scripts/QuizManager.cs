@@ -29,7 +29,6 @@ public class QuizManager : MonoBehaviour {
 
     void Start() {
         QUIZ_TIME = GameManager.GetInstance().QUIZ_TIME;
-
         generateQuestion();
     }
 
