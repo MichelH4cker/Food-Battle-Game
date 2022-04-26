@@ -7,12 +7,16 @@ public class Bullet : MonoBehaviour {
     public float movementSpeed;
     public int DamageValue;
 
+    private bool quizPause;
     private const int DESTROY_X_POSITION = 2100;
 
     void Update() {
-        transform.Translate(new Vector3(movementSpeed, 0, 0));
-        if (transform.position.x > DESTROY_X_POSITION){
-            Destroy(this.gameObject);
+        quizPause = GameManager.GetInstance().quizPause;
+        if(!quizPause){
+            transform.Translate(new Vector3(movementSpeed, 0, 0));
+            if (transform.position.x > DESTROY_X_POSITION){
+                Destroy(this.gameObject);
+            }
         }
     }
 

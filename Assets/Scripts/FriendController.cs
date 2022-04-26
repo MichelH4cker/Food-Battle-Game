@@ -16,7 +16,6 @@ public class FriendController : MonoBehaviour {
 
     public GameManager gameManager;
 
-    public List<GameObject> allies;
     public List<GameObject> enemies;
 
     public Text HealthText;
@@ -26,17 +25,19 @@ public class FriendController : MonoBehaviour {
     public Sprite defaultImageSprite;
 
     public bool isAttacking;
-    public int Health;
-    public int DamageValue;
     public float attackCooldown;
 
+    private int Health;
+    private int DamageValue;
     private float attackTime;
     private bool quizPause;
     private const float BLINK_DELAY = 0.15f;
 
     void Awake() {
         instance = this;
-        HealthText.text = "x" + Health;
+        Health = ObjectCard.GetInstance().Health;
+        DamageValue = ObjectCard.GetInstance().Damage;
+        HealthText.text = Health + "X";
     }
 
     void Start() {

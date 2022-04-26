@@ -17,14 +17,14 @@ public class EnemyController : MonoBehaviour {
     public Sprite blinkImage;
     public Sprite defaultImageSprite;
 
-    public int DamageValue;
     public float DamageCooldown;    
 
     private bool isStopped;
     private bool quizPause;
 
+    private int Health;
+    public int DamageValue;
     private int RemainingHeartsInt;
-    private int Health = 5;
     private const int DESTROY_X_POSITION = 600;
     private const float MOVEMENT_SPEED = 0.3f;
     private const float BLINK_DELAY = 0.15f;
@@ -86,7 +86,7 @@ public class EnemyController : MonoBehaviour {
             yield return new WaitForSeconds(BLINK_DELAY);
         }
         if(destroy){
-            Destroy(this.gameObject);
+            ReceiveDamage(Health);
         }
     }
 

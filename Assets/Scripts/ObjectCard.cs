@@ -17,17 +17,24 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public GameObject objectDrag;
     public GameObject objectGame;
     public Canvas canvas;
+
+    public Text HealthText;
+    public Text DamageText;
     public Text RemainingAllyText;
 
     public int MAX_ALLY;
     public int alliesLeft;
+    public int Damage;
+    public int Health;
 
     void Awake(){
         instance = this;
     }
 
     private void Start() {
-        RemainingAllyText.text = MAX_ALLY + " X";
+        RemainingAllyText.text = MAX_ALLY + "X";
+        HealthText.text = Health + "X";
+        DamageText.text = Damage + "X";
         alliesLeft = MAX_ALLY;
         gameManager = GameManager.instance; 
     }
