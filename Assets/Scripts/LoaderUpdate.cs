@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LoaderUpdate : MonoBehaviour {
-
     private void Update(){
         SceneLoader.LoadTargetScene();
     }

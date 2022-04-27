@@ -9,9 +9,9 @@ public class EndMenu : MonoBehaviour {
 
     void Start() {
         if (GameDetails.GetInstance().PlayerWon){
-            FeedbackGameText.text = "VOCÊ GANHOU!";
+            FeedbackGameText.text = "VOCÊ CONSEGUIU APRENDER TUDO SOBRE NUTRIÇÃO PERFEITAMENTE E INGERIU SOMENTE ALIMENTOS ORGÂNICOS E NÃO INDUSTRIAIS. VOCÊ GANHOU!";
         } else {
-            FeedbackGameText.text = "VOCÊ PERDEU!";
+            FeedbackGameText.text = "VOCÊ INGERIU ALIMENTOS PROCESSADOS E NÃO SAUDÁVEIS, PREJUDICANDO SUA SAÚDE. VOCÊ PERDEU!";
         }
     }
 

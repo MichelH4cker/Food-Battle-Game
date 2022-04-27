@@ -10,6 +10,7 @@ public static class SceneLoader {
         LoadingScene,
         GameScene,
         EndScene,
+        CreditosScene,
     }
 
     private static Scene targetScene;
