@@ -23,10 +23,6 @@ public class EnemyController : MonoBehaviour {
     private bool isStopped;
     private bool quizPause;
 
-<<<<<<< Updated upstream
-=======
-    public int DamageValue;
->>>>>>> Stashed changes
     private int RemainingHeartsInt;
     private int Health = 5;
     private const int DESTROY_X_POSITION = 600;
