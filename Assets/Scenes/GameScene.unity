@@ -5308,7 +5308,6 @@ MonoBehaviour:
   enemiesPrefabs:
   - {fileID: 9022282966073186147, guid: ea2f4690b9971421f85034aa6c23bc45, type: 3}
   - {fileID: 3385458306403913384, guid: c664ddeffd96aa5fe8747109584a40ec, type: 3}
-  - {fileID: 7700164192823229655, guid: dcef3aa9c0966d170b07277a4f2fe593, type: 3}
   enemyInstance: {fileID: 0}
 --- !u!1001 &1182449580
 PrefabInstance:
