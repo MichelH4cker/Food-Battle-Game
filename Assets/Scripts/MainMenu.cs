@@ -9,6 +9,10 @@ public class MainMenu : MonoBehaviour {
         SceneLoader.Load(SceneLoader.Scene.GameScene);
     }
 
+    public void CreditosGame(){
+        SceneLoader.Load(SceneLoader.Scene.CreditosScene);
+    }
+
     public void QuitGame() {
         Application.Quit();
     }

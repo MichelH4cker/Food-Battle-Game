@@ -315,10 +315,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthText: {fileID: 4316209932836911002}
   defaultImage: {fileID: 2476341525379840092}
-  blinkImage: {fileID: 21300000, guid: f3e787b9cc6933ae4a435ea2c184f095, type: 3}
-  defaultImageSprite: {fileID: 21300000, guid: e0512aadf980cd03a8cbf34ed63c8170, type: 3}
-  DamageValue: 1
+  blinkImage: {fileID: 21300000, guid: 68ff32eecadb01a20858f05ae68e6195, type: 3}
+  defaultImageSprite: {fileID: 21300000, guid: 17e230565d931951e920d49cb4d34bb5, type: 3}
   DamageCooldown: 2
+  DamageValue: 1
 --- !u!50 &2600689490141159058
 Rigidbody2D:
   serializedVersion: 4
