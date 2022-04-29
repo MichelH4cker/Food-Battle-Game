@@ -528,6 +528,8 @@ MonoBehaviour:
   RemainingAllyText: {fileID: 0}
   MAX_ALLY: 0
   alliesLeft: 0
+  Damage: 2
+  Health: 6
 --- !u!1 &6494587772167740135
 GameObject:
   m_ObjectHideFlags: 0

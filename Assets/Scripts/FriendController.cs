@@ -27,16 +27,16 @@ public class FriendController : MonoBehaviour {
     public bool isAttacking;
     public float attackCooldown;
 
-    private int Health;
-    private int DamageValue;
+    public int Health;
+    public int DamageValue;
     private float attackTime;
     private bool quizPause;
     private const float BLINK_DELAY = 0.15f;
 
     void Awake() {
         instance = this;
-        Health = ObjectCard.GetInstance().Health;
-        DamageValue = ObjectCard.GetInstance().Damage;
+        //Health = ObjectCard.GetInstance().Health;
+        //DamageValue = ObjectCard.GetInstance().Damage;
         HealthText.text = Health + "X";
     }
 
