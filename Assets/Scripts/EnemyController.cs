@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour {
     private int RemainingHeartsInt;
     private int Health = 5;
     private const int DESTROY_X_POSITION = 600;
-    private const float MOVEMENT_SPEED = 0.3f;
+    private const float MOVEMENT_SPEED = 0.5f;
     private const float BLINK_DELAY = 0.15f;
 
     void Awake() {
