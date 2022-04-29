@@ -12363,27 +12363,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestionAndAnswersList:
-  - Question: "As prote\xEDnas s\xE3o chamadas tamb\xE9m de alimentos construtores.
-      Elas s\xE3o respons\xE1veis pela renova\xE7\xE3o e constru\xE7\xE3o de tecidos,
-      m\xFAsculos, cabelos, unhas e produ\xE7\xE3o de horm\xF4nios. Por isso, s\xE3o
-      essenciais para uma alimenta\xE7\xE3o saud\xE1vel. Dentre os alimentos abaixo,
-      quais possuem maior fonte de prote\xEDnas?"
-    Answers:
-    - Massa
-    - Leite e Derivados
-    - "Piment\xE3o Verde"
-    - Frutas
-    CorrectAnswer: 2
-  - Question: "A vitamina A tem como fun\xE7\xF5es fortalecer a vis\xE3o, manter
-      a pele, os cabelos e as unhas saud\xE1veis, contribuir para a preven\xE7\xE3o
-      de doen\xE7as e promover o crescimento \xF3sseo. Ela \xE9 encontrada em maior
-      quantidade em quais alimentos?"
-    Answers:
-    - "F\xEDgado, peixes, cenoura, tomate, espinafre"
-    - Vegetais folhosos, abacaxi, morango, goiaba
-    - "Gr\xE3os, cereais integrais, ervilha"
-    - "G\xE9rmen de trigo, caju, cenoura"
-    CorrectAnswer: 1
   - Question: "Quais alimentos s\xE3o considerados saud\xE1veis?"
     Answers:
     - "Alimentos org\xE2nicos e livres de processos industriais"
@@ -12399,6 +12378,287 @@ MonoBehaviour:
     - "Berib\xE9ri "
     - Escorbuto
     CorrectAnswer: 4
+  - Question: "Como deve ser a variedade de alimentos para se consumir uma alimenta\xE7\xE3o
+      balanceada?"
+    Answers:
+    - "Apenas gr\xE3os, legumes e verduras devem ser consumidos na alimenta\xE7\xE3o
+      do dia a dia"
+    - "Quanto mais diverso, melhor! Frutas, legumes, verduras e muitos outros grupos
+      n\xE3o devem fazer parte do card\xE1pio"
+    - "O card\xE1pio deve ser variado, mas apenas um alimento de cada grupo \xE9
+      suficiente"
+    - "Al\xE9m de fazerem bem \xE0 sa\xFAde, alimentos in natura e minimamente processados
+      tamb\xE9m s\xE3o importantes para a sustentabilidade"
+    CorrectAnswer: 4
+  - Question: "Em um programa de alimenta\xE7\xE3o saud\xE1vel \xE9 poss\xEDvel utilizar
+      gorduras, sais e a\xE7\xFAcar?"
+    Answers:
+    - "N\xE3o, esses itens fazem parte de uma dieta nutricionalmente desbalanceada"
+    - "Sim, pois eles n\xE3o contribuem para tornar a alimenta\xE7\xE3o mais saborosa"
+    - "Sim, eles s\xE3o considerados ingredientes culin\xE1rios e devem ser consumidos
+      com modera\xE7\xE3o"
+    - "N\xE3o, esses itens servem apenas para tornar a comida mais saborosa"
+    CorrectAnswer: 3
+  - Question: "Como devem ser consumidos os alimentos processados como p\xE3es e
+      queijos?"
+    Answers:
+    - "Livremente, em todas as refei\xE7\xF5es"
+    - Moderadamente e junto com alimentos in natura e minimamente processados
+    - Em conjunto com alimentos ultraprocessados
+    - "N\xE3o devem ser consumidos jamais"
+    CorrectAnswer: 2
+  - Question: O consumo de alimentos naturais nos favorece em qual sentido?
+    Answers:
+    - "Faz bem para nossa sa\xFAde apenas"
+    - "N\xE3o nos favorece"
+    - "T\xEAm influ\xEAncia positiva na cultura, vida social, meio ambiente e na
+      nossa sa\xFAde"
+    - "Ajuda o meio ambiente e \xE9 melhor para nossa sa\xFAde, sem influ\xEAncia
+      cultural e social"
+    CorrectAnswer: 3
+  - Question: "Como deve ser o ambiente ideal para uma refei\xE7\xE3o?"
+    Answers:
+    - "Comer com a fam\xEDlia ou amigos em lugares barulhentos"
+    - Comer vendo TV ou mexendo no celular
+    - "Comer em p\xE9, andando, no carro ou transporte p\xFAblico"
+    - "Comer em local limpo, confort\xE1vel e tranquilo"
+    CorrectAnswer: 4
+  - Question: "Para montar um prato saud\xE1vel \xE9 necess\xE1rio:"
+    Answers:
+    - "N\xE3o possuir carboidratos, j\xE1 que engordam"
+    - "Possuir apenas prote\xEDnas, pois s\xE3o importantes em v\xE1rios processos
+      fisiol\xF3gicos"
+    - "Uma mistura de carboidratos, prote\xEDnas, fibras e gorduras"
+    - "Possuir apenas fibras, pois causam sensa\xE7\xE3o de saciedade prolongada"
+    CorrectAnswer: 3
+  - Question: Sabemos que existem pratos muito saborosos! Como podemos aprender a
+      fazer novas receitas?
+    Answers:
+    - Evitando procurar receitas na internet
+    - "Deixando de lado as dicas dos av\xF3s"
+    - Nos reunir com amigos para comprar comida pronta
+    - Criar e testar com o que tivermos em casa
+    CorrectAnswer: 4
+  - Question: "Como podemos conciliar nossos compromissos di\xE1rios com a nossa
+      alimenta\xE7\xE3o?"
+    Answers:
+    - "Almo\xE7ar em um restaurante para n\xE3o ter que preparar essa refei\xE7\xE3o"
+    - "Planejar as refei\xE7\xF5es da semana e as compras de alimentos com anteced\xEAncia"
+    - Comer fazendo outras tarefas ao mesmo tempo
+    - "N\xE3o dividir com as outras pessoas que moram com voc\xEA o preparo das refei\xE7\xF5es"
+    CorrectAnswer: 2
+  - Question: "Como contornar as dificuldades criadas por uma rotina fora de casa
+      para mantermos uma alimenta\xE7\xE3o saud\xE1vel?"
+    Answers:
+    - "Alimentar-se em fast-foods para uma maior otimiza\xE7\xE3o do tempo"
+    - "Alimentar-se apenas de marmitas prontas feitas em casa em qualquer ocasi\xE3o"
+    - "Preferir restaurantes com refei\xE7\xF5es feitas na hora a um pre\xE7o acess\xEDvel"
+    - "Alimentar-se em restaurantes caros, j\xE1 que eles devem ser mais saud\xE1veis"
+    CorrectAnswer: 3
+  - Question: As propagandas de alimentos se fazem muito presentes na nossa rotina,
+      como lidamos com ela?
+    Answers:
+    - "Consumindo todos os alimentos que se dizem saud\xE1veis"
+    - "Ignorando todos os alimentos que se dizem saud\xE1veis"
+    - Ouvindo e consumindo tudo que famosos compartilham
+    - "Analisando criticamente o que nos \xE9 dito e avaliando se condiz com a realidade"
+    CorrectAnswer: 4
+  - Question: "O preparo de alimentos espec\xEDficos e modos de comer particulares
+      constituem parte importante da cultura de uma sociedade. A alimenta\xE7\xE3o
+      est\xE1 relacionada com os seguintes aspectos sociais, exceto:"
+    Answers:
+    - Identidade e sentimento de pertencimento
+    - "Sa\xFAde"
+    - Bem-estar
+    - Mobilidade
+    CorrectAnswer: 4
+  - Question: "Alimentos in natura s\xE3o alimentos retirados da natureza que passam
+      por t\xE9cnicas de processamentos simples, como retirada de cascas ou partes
+      n\xE3o consum\xEDveis. Identifique a lista que cont\xE9m somente alimentos
+      in natura"
+    Answers:
+    - "Feij\xE3o enlatado, ab\xF3bora e batata-doce"
+    - "Arroz, feij\xE3o e mandioca"
+    - "Gr\xE3o-de-bico, manteiga e alface"
+    - Leite, castanhas e frutas cristalizadas
+    CorrectAnswer: 2
+  - Question: "H\xE1 v\xE1rias doen\xE7as que est\xE3o diretamente associadas ao
+      aumento do consumo de calorias devido a oferta desequilibrada de nutrientes
+      na alimenta\xE7\xE3o, al\xE9m da vida mais sedent\xE1ria. Qual das doen\xE7as
+      abaixo n\xE3o est\xE1 relacionada a isso?"
+    Answers:
+    - "Desnutri\xE7\xE3o"
+    - "Hipertens\xE3o"
+    - Diabetes
+    - Obesidade
+    CorrectAnswer: 1
+  - Question: "O sistema de produ\xE7\xE3o e distribui\xE7\xE3o dos alimentos pode
+      promover justi\xE7a social e proteger o meio ambiente e a biodiversidade. Assinale
+      a alternativa que n\xE3o est\xE1 associada a esses efeitos:"
+    Answers:
+    - Autonomia dos agricultores na escolha de sementes e fertilizantes
+    - "Gera\xE7\xE3o de oportunidades de trabalho e renda"
+    - "Processamento m\xEDnimo dos alimentos realizado pelos pr\xF3prios agricultores"
+    - Sistemas alimentares baseados em monoculturas
+    CorrectAnswer: 4
+  - Question: 'Um sistema de monocultura depende dos seguintes fatores, exceto:'
+    Answers:
+    - "Grandes extens\xF5es de terra"
+    - "Uso intenso de mecaniza\xE7\xE3o"
+    - "Baixo consumo de \xE1gua"
+    - "Emprego de fertilizantes qu\xEDmicos, sementes transg\xEAnicas, agrot\xF3xicos
+      e antibi\xF3ticos"
+    CorrectAnswer: 3
+  - Question: "Adquirir a autonomia para fazer escolhas saud\xE1veis, como a alimenta\xE7\xE3o
+      saud\xE1vel, depende:"
+    Answers:
+    - "Do pr\xF3prio sujeito e do ambiente em que ele vive"
+    - "Apenas do pr\xF3prio sujeito"
+    - Apenas do ambiente onde ele vive
+    - De nenhum dos dois
+    CorrectAnswer: 1
+  - Question: "Muitos fatores podem influenciar positiva ou negativamente o padr\xE3o
+      de alimenta\xE7\xE3o das pessoas. Assinale um fator que influencia positivamente
+      este padr\xE3o."
+    Answers:
+    - "Necessidade de fazer refei\xE7\xF5es em locais onde n\xE3o s\xE3o oferecidas
+      op\xE7\xF5es saud\xE1veis de alimenta\xE7\xE3o"
+    - Custo mais elevado dos alimentos minimamente processados diante dos ultraprocessados
+    - "Exposi\xE7\xE3o intensa \xE0 publicidade de alimentos n\xE3o saud\xE1veis"
+    - "Morar em bairros ou territ\xF3rios onde h\xE1 feiras e mercados que comercializam
+      frutas, verduras e legumes com boa qualidade"
+    CorrectAnswer: 4
+  - Question: "Assinale qual dos princ\xEDpios abaixo n\xE3o condiz com aqueles que
+      orientaram a elabora\xE7\xE3o do guia alimentar."
+    Answers:
+    - "Alimenta\xE7\xE3o \xE9 mais que apenas a ingest\xE3o de nutrientes"
+    - "Recomenda\xE7\xF5es sobre alimenta\xE7\xE3o n\xE3o precisam estar em sintonia
+      com seu tempo"
+    - "Alimenta\xE7\xE3o adequada e saud\xE1vel deriva de sistema alimentar socialmente
+      e ambientalmente sustent\xE1vel"
+    - "Diferentes saberes geram o conhecimento para a formula\xE7\xE3o de guias alimentares"
+    CorrectAnswer: 2
+  - Question: "Quando pensamos em prote\xEDna animal, qual seria a resposta correta?"
+    Answers:
+    - "Recomenda-se que a carne das aves seja consumida com a pele, pois essa parte
+      \xE9 pobre em gorduras"
+    - "Coxa, sobrecoxa e asas s\xE3o cortes de aves com menos gordura em rela\xE7\xE3o
+      ao peito"
+    - "Galinhada mineira e goiana s\xE3o pratos t\xEDpicos brasileiros que cont\xE9m
+      carne de aves"
+    - "Em geral, as carnes de aves t\xEAm menos gordura que os peixes"
+    CorrectAnswer: 3
+  - Question: "Dentre as afirma\xE7\xF5es nutricionais abaixo, assinale a correta:"
+    Answers:
+    - "As frutas cont\xEAm entre 80 e 90% de sua composi\xE7\xE3o baseada em \xE1gua"
+    - "Todas as pessoas t\xEAm a mesma necessidade di\xE1ria de ingest\xE3o de \xE1gua"
+    - "Caf\xE9 ou ch\xE1 devem ser os l\xEDquidos mais consumidos ao longo do dia,
+      em especial quando adicionados de a\xE7\xFAcar"
+    - "Saladas costumam ter pouco de seu percentual baseado em \xE1gua"
+    CorrectAnswer: 1
+  - Question: "Quando se pensa em alimenta\xE7\xE3o saud\xE1vel, a manipula\xE7\xE3o
+      e a conserva\xE7\xE3o dos alimentos s\xE3o coisas importantes, portanto, podemos
+      afirmar que:"
+    Answers:
+    - "A higieniza\xE7\xE3o dos alimentos n\xE3o \xE9 importante no contexto de uma
+      alimenta\xE7\xE3o saud\xE1vel"
+    - Frutas e legumes podem ser consumidos mesmo que mofados, apenas devendo-se
+      descartar a parte mofada
+    - "Alimentos que estragam com maior facilidade devem ser armazenados \xE0 temperatura
+      ambiente"
+    - "O uso da solu\xE7\xE3o de hipoclorito de s\xF3dio \xE9 uma boa op\xE7\xE3o
+      para a higieniza\xE7\xE3o de frutas e verduras"
+    CorrectAnswer: 4
+  - Question: "A partir da ideia de alimenta\xE7\xE3o saud\xE1vel, qual tipo de alimento
+      \xE9 recomend\xE1vel evitar?"
+    Answers:
+    - Ultraprocessados
+    - Frutas frescas
+    - Castanhas
+    - Nozes
+    CorrectAnswer: 1
+  - Question: "Qual das afirmativas a seguir \xE9 correta sobre mastiga\xE7\xE3o?"
+    Answers:
+    - "Quanto mais mastigamos os alimentos, naturalmente aumentamos nossa concentra\xE7\xE3o
+      no ato de comer e prolongamos sua dura\xE7\xE3o"
+    - "Quanto menos mastigamos os alimentos, naturalmente aumentamos nossa concentra\xE7\xE3o
+      no ato de comer e prolongamos sua dura\xE7\xE3o"
+    - "Quanto mais mastigamos os alimentos, naturalmente diminu\xEDmos nossa concentra\xE7\xE3o
+      no ato de comer e prolongamos sua dura\xE7\xE3o"
+    - "Quanto menos mastigamos os alimentos, naturalmente aumentamos nossa concentra\xE7\xE3o
+      no ato de comer e diminu\xEDmos sua dura\xE7\xE3o"
+    CorrectAnswer: 1
+  - Question: "Qual seria o ambiente mais apropriado para realizarmos nossas refei\xE7\xF5es?"
+    Answers:
+    - "Locais limpos, confort\xE1veis e tranquilos e onde n\xE3o haja est\xEDmulos
+      para o consumo de quantidades ilimitadas de alimentos"
+    - "Locais apertados, com muitas pessoas e sem conforto e onde haja est\xEDmulos
+      para o consumo de quantidades ilimitadas de alimentos"
+    - "Locais sujos, com muitas pessoas e conforto e onde haja est\xEDmulos para
+      o consumo de quantidades limitadas de alimentos"
+    - "Locais limpos, com muitas pessoas e com conforto e onde n\xE3o haja est\xEDmulos
+      para o consumo de quantidades limitadas de alimentos"
+    CorrectAnswer: 1
+  - Question: "Qual seria o ambiente mais apropriado para realizarmos nossas refei\xE7\xF5es?"
+    Answers:
+    - "Locais limpos, confort\xE1veis e tranquilos e onde n\xE3o haja est\xEDmulos
+      para o consumo de quantidades ilimitadas de alimentos"
+    - "Locais apertados, com muitas pessoas e sem conforto e onde haja est\xEDmulos
+      para o consumo de quantidades ilimitadas de alimentos"
+    - "Locais sujos, com muitas pessoas e conforto e onde haja est\xEDmulos para
+      o consumo de quantidades limitadas de alimentos"
+    - "Locais limpos, com muitas pessoas e com conforto e onde n\xE3o haja est\xEDmulos
+      para o consumo de quantidades limitadas de alimentos"
+    CorrectAnswer: 1
+  - Question: "Os nutricionistas dizem que comer estando acompanhado \xE9 melhor
+      do que sozinho. Por que?"
+    Answers:
+    - "Comer em companhia, com familiares, amigos ou colegas de trabalho/escola aumenta
+      o tempo de mastiga\xE7\xE3o e a aprecia\xE7\xE3o do alimento"
+    - "Comer sozinho aumenta o tempo de mastiga\xE7\xE3o e a aprecia\xE7\xE3o do
+      alimento"
+    - "Ao comer em companhia, com familiares, amigos ou colegas de trabalho/escola,
+      perdemos menos tempo com a alimenta\xE7\xE3o e melhoramos nossa rotina"
+    - "Sempre que poss\xEDvel, preferir comer sozinho. A vantagem \xE9 comer mais
+      r\xE1pido e seguir a rotina"
+    CorrectAnswer: 1
+  - Question: "Sobre o ato de comer, tempo, espa\xE7o e companhia. Assinale a melhor
+      alternativa:"
+    Answers:
+    - "A regularidade e a dura\xE7\xE3o adequada das refei\xE7\xF5es demandam ambiente
+      apropriado e s\xE3o favorecidas pelo comer em companhia. O ambiente apropriado
+      ajuda a aumentar a concentra\xE7\xE3o no ato de comer. O comer em companhia
+      evita que comamos muito rapidamente"
+    - "A irregularidade e a dura\xE7\xE3o r\xE1pida das refei\xE7\xF5es n\xE3o demandam
+      de local espec\xEDfico e a melhor alternativa \xE9 comer sem companhia. O ambiente
+      inapropriado ajuda a comer menos"
+    - "A irregularidade e a dura\xE7\xE3o adequada das refei\xE7\xF5es n\xE3o demandam
+      de local espec\xEDfico e a melhor alternativa \xE9 comer acompanhado. O ambiente
+      inapropriado ajuda a comer menos"
+    - "A regularidade e a dura\xE7\xE3o r\xE1pida das refei\xE7\xF5es demandam ambiente
+      apropriado e s\xE3o favorecidas pelo comer em companhia. O ambiente inapropriado
+      ajuda a comer mais r\xE1pido o alimento"
+    CorrectAnswer: 1
+  - Question: 'Sobre o aspecto de comer em companhia. Assinale a melhor alternativa:'
+    Answers:
+    - "Compartilhar o comer e as atividades envolvidas neste ato \xE9 extremamente
+      errado, pois comer \xE9 um ato individual"
+    - "Compartilhar o comer e as atividades envolvidas neste ato \xE9 um modo simples
+      e profundo de criar e desenvolver rela\xE7\xF5es entre pessoas. Dessa forma,
+      comer \xE9 parte natural da vida social"
+    - "Compartilhar o comer e as atividades envolvidas neste ato \xE9 um modo dif\xEDcil
+      de criar e desenvolver rela\xE7\xF5es entre pessoas"
+    - "O ato de comer \xE9 um fen\xF4meno individual. Compartilhar o comer e o preparo
+      do alimento com o outro \xE9 um processo n\xE3o natural do ser humano"
+    CorrectAnswer: 2
+  - Question: "Todas as alternativas indicam boas escolhas de alimentos e locais
+      realizar a sua refei\xE7\xE3o, exceto:"
+    Answers:
+    - Comer alimentos frescos, em casa
+    - "Comer hortali\xE7as, em casa"
+    - Comer alimentos ultraprocessados, fora de casa
+    - Comer leguminosas, na casa de amigos e familiares
+    CorrectAnswer: 3
   answerOptions:
   - {fileID: 167915669}
   - {fileID: 2116140928}
