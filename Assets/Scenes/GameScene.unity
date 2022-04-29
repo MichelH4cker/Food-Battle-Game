@@ -4567,11 +4567,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7761586914929356524, guid: 71f7927c9e553551f84ad8fbb3de25c3, type: 3}
   m_PrefabInstance: {fileID: 1034057708}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> main
 --- !u!1001 &1035583294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4645,19 +4640,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515786737427534232, guid: 637761c3dc0bd9a61a6ef2dcc61d16a5, type: 3}
       propertyPath: m_AnchoredPosition.x
-<<<<<<< HEAD
-      value: -801
-      objectReference: {fileID: 0}
-    - target: {fileID: 6515786737427534232, guid: 637761c3dc0bd9a61a6ef2dcc61d16a5, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 260
-=======
       value: -807
       objectReference: {fileID: 0}
     - target: {fileID: 6515786737427534232, guid: 637761c3dc0bd9a61a6ef2dcc61d16a5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 335
->>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 6515786737427534232, guid: 637761c3dc0bd9a61a6ef2dcc61d16a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4697,10 +4684,6 @@ PrefabInstance:
       objectReference: {fileID: 1649477335}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637761c3dc0bd9a61a6ef2dcc61d16a5, type: 3}
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> main
 --- !u!224 &1038698858 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7761586914929356524, guid: 71f7927c9e553551f84ad8fbb3de25c3, type: 3}
@@ -5325,7 +5308,7 @@ MonoBehaviour:
   enemiesPrefabs:
   - {fileID: 9022282966073186147, guid: ea2f4690b9971421f85034aa6c23bc45, type: 3}
   - {fileID: 3385458306403913384, guid: c664ddeffd96aa5fe8747109584a40ec, type: 3}
-  - {fileID: 3385458306403913384, guid: c664ddeffd96aa5fe8747109584a40ec, type: 3}
+  - {fileID: 7700164192823229655, guid: dcef3aa9c0966d170b07277a4f2fe593, type: 3}
   enemyInstance: {fileID: 0}
 --- !u!1001 &1182449580
 PrefabInstance:
@@ -12511,27 +12494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3708991062658939262, guid: ba334106ffc77370080abb63b16e5c98, type: 3}
       propertyPath: m_AnchoredPosition.x
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      value: -788
-=======
-      value: -574
->>>>>>> Stashed changes
-=======
       value: -580
->>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 3708991062658939262, guid: ba334106ffc77370080abb63b16e5c98, type: 3}
       propertyPath: m_AnchoredPosition.y
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      value: -342
-=======
-      value: 260.0001
->>>>>>> Stashed changes
-=======
       value: 335
->>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 3708991062658939262, guid: ba334106ffc77370080abb63b16e5c98, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
