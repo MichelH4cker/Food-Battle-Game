@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 301460592185428470}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 641980956105452242}
   - component: {fileID: 266679941474128463}
   - component: {fileID: 2476341525379840092}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2577535852082098372}
   - component: {fileID: 3151361422850300240}
   - component: {fileID: 9073077866048486038}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HeartIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9022282966073186147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 641980956105452242}
@@ -317,8 +317,8 @@ MonoBehaviour:
   defaultImage: {fileID: 2476341525379840092}
   blinkImage: {fileID: 21300000, guid: 68ff32eecadb01a20858f05ae68e6195, type: 3}
   defaultImageSprite: {fileID: 21300000, guid: 17e230565d931951e920d49cb4d34bb5, type: 3}
-  DamageCooldown: 2
   DamageValue: 1
+  DamageCooldown: 2
 --- !u!50 &2600689490141159058
 Rigidbody2D:
   serializedVersion: 4
@@ -357,8 +357,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.34, y: 22.62202}
-    newSize: {x: 23.34, y: 22.62202}
+    oldSize: {x: 2.14, y: 2.56}
+    newSize: {x: 2.14, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

@@ -25,8 +25,9 @@ public class EnemyController : MonoBehaviour {
 
     private int RemainingHeartsInt;
     private int Health = 5;
-    private const int DESTROY_X_POSITION = 600;
-    private const float MOVEMENT_SPEED = 0.5f;
+    private const int DESTROY_X_POSITION = 650;
+    // movement speed = 0.3
+    private const float MOVEMENT_SPEED = 0.3f;
     private const float BLINK_DELAY = 0.15f;
 
     void Awake() {
@@ -79,7 +80,9 @@ public class EnemyController : MonoBehaviour {
     }
 
     public IEnumerator BlinkEnemy(int timesToBlink, bool destroy){
-        yield return new WaitForSeconds(3f);
+        if(destroy){
+            yield return new WaitForSeconds(2f);
+        }
         for (int i = 0; i < timesToBlink; i++){
             defaultImage.sprite = blinkImage;
             yield return new WaitForSeconds(BLINK_DELAY);

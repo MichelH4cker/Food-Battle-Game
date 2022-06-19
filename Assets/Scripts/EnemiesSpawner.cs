@@ -43,10 +43,10 @@ public class EnemiesSpawner : MonoBehaviour  {
             
         if (spawnTime > randomTime) {
             spawnTime = 0;
-            randomTime = Random.Range(8,13);
+            randomTime = Random.Range(4,9);
 
             spawnPointIndex = Random.Range(0,5);
-            enemyIndex = Random.Range(0,3);
+            enemyIndex = Random.Range(0,2);
 
             enemyInstance = Instantiate(enemiesPrefabs[enemyIndex], spawnPointList[spawnPointIndex].transform);
 

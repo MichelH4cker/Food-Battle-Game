@@ -13,7 +13,6 @@ public class Enemy {
 }
 
 public enum EnemyType {
-    EnemyBlackHeart,
-    EnemyClub,
-    EnemySpade
+    EnemyFrenchFries,
+    EnemySoda
 }
