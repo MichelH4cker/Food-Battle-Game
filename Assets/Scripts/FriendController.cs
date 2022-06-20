@@ -63,6 +63,7 @@ public class FriendController : MonoBehaviour {
 
             if (toAttack != null) {
                 if (attackTime <= Time.time) {
+                    SoundManager.PlaySound(SoundManager.Sound.Shoot);
                     GameObject bulletInstance = Instantiate(bullet, transform);
                     bulletInstance.GetComponent<Bullet>().DamageValue = DamageValue;
                     attackTime = Time.time + attackCooldown;
@@ -73,9 +74,11 @@ public class FriendController : MonoBehaviour {
 
     public void ReceiveDamage(int Damage) { // friend receive damage
         if(Health - Damage <= 0) {
+            SoundManager.PlaySound(SoundManager.Sound.HealthyDied);
             Destroy(this.gameObject);
             GameManager.GetInstance().livingAllies--;
         } else {
+            SoundManager.PlaySound(SoundManager.Sound.HealthyReceiveDamage);
             Health = Health - Damage;
             HealthText.text = "x" + Health;
             StartCoroutine(BlinkAlly(1, false));

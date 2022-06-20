@@ -66,14 +66,12 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
     public void OnPointerUp(PointerEventData eventData) {
         if (alliesLeft >= 0) {
             gameManager.PlaceObject();
+            SoundManager.PlaySound(SoundManager.Sound.PlaceObject);
+
         }
 
         Destroy(objectDragInstance);
         gameManager.draggingObject = null; 
-        /*
-        if (GameManager.GetInstance().positioned == false){
-            alliesLeft++;
-            RemainingAllyText.text = alliesLeft + " X";
-        }*/
+    
     }
 }

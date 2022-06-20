@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,14 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager GetInstance() {
         return instance;
+    }
+
+    public SoundAudioClip[] soundAudioClipArray;
+
+    [Serializable]
+    public class SoundAudioClip {
+        public SoundManager.Sound sound;
+        public AudioClip audioClip;
     }
 
     public List<GameObject> allies;
