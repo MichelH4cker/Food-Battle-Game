@@ -76,7 +76,6 @@ public class QuizManager : MonoBehaviour {
     public IEnumerator AnswerFeedback(bool correct) {
         if(correct) {
             SoundManager.PlaySound(SoundManager.Sound.CorrectAnswer);
-
             CorrectFeedbackText.gameObject.SetActive(true);
             yield return new WaitForSeconds(3.5f);
             CorrectFeedbackText.gameObject.SetActive(false);
