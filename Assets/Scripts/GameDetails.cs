@@ -34,6 +34,7 @@ public class GameDetails : MonoBehaviour {
 
     void Update() {
         if(RemainingTimeFloat <= 0) {
+            SoundManager.PlaySound(SoundManager.Sound.GameWon);
             PlayerWon = true;
             SceneLoader.Load(SceneLoader.Scene.EndScene);
         }
