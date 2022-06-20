@@ -66,9 +66,11 @@ public class EnemyController : MonoBehaviour {
     
     public void ReceiveDamage(int Damage) { // enemy receive damage
         if(Health - Damage <= 0) {
+            SoundManager.PlaySound(SoundManager.Sound.UnhealthyDied);
             transform.parent.GetComponent<SpawnPoint>().enemies.Remove(this.gameObject);
             Destroy(this.gameObject);
         } else {
+            SoundManager.PlaySound(SoundManager.Sound.UnhealthyReceiveDamage);
             Health = Health - Damage;
             HealthText.text = "x" + Health;
             StartCoroutine(BlinkEnemy(1, false));

@@ -75,12 +75,16 @@ public class QuizManager : MonoBehaviour {
 
     public IEnumerator AnswerFeedback(bool correct) {
         if(correct) {
+            SoundManager.PlaySound(SoundManager.Sound.CorrectAnswer);
+
             CorrectFeedbackText.gameObject.SetActive(true);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(3.5f);
             CorrectFeedbackText.gameObject.SetActive(false);
         } else {
+            SoundManager.PlaySound(SoundManager.Sound.WrongAnswer);
+
             WrongFeedbackText.gameObject.SetActive(true);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(3.5f);
             WrongFeedbackText.gameObject.SetActive(false);
         }
         yield return new WaitForSeconds(3f);
