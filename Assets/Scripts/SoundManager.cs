@@ -14,7 +14,8 @@ public static class SoundManager {
         UnhealthyDied,
         GameWon,
         GameLose,
-        PlaceObject
+        PlaceObject,
+        Pop
     }
 
     public static void PlaySound(Sound sound){

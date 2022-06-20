@@ -42,8 +42,8 @@ public class EnemyController : MonoBehaviour {
         }
         
         if (LeftTheMap()) {
-            SceneLoader.Load(SceneLoader.Scene.EndScene);
             Destroy(this.gameObject);
+            SceneLoader.Load(SceneLoader.Scene.EndScene);
         }
     }
    
