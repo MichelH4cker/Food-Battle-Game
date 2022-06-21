@@ -29,27 +29,26 @@ public class GameDetails : MonoBehaviour {
         HideErrorMessage();
         RemainingTimeFloat = GameManager.GetInstance().GAME_MAX_TIME;
         RemainingTimeText.text = "TEMPO RESTANTE: " + RemainingTimeFloat + "s";        
-        InvokeRepeating("DecreaseTimeRemaining", 1.0f, 1.0f);
     }
 
     void Update() {
+        if(!GameManager.GetInstance().quizPause){
+            RemainingTimeFloat -= Time.deltaTime;
+        }
+
         if(RemainingTimeFloat <= 0) {
             SoundManager.PlaySound(SoundManager.Sound.GameWon);
             PlayerWon = true;
             SceneLoader.Load(SceneLoader.Scene.EndScene);
         }
-        RemainingTimeText.text = "TEMPO RESTANTE: " + RemainingTimeFloat + "s";     
+
+        RemainingTimeText.text = "TEMPO RESTANTE: " + Mathf.Round(RemainingTimeFloat) + "s";    
+
         counterTime += Time.deltaTime;
         if (counterTime > ErrorMessageDelay) {
             counterTime = 0;
             HideErrorMessage();
         }   
-    }
-
-    void DecreaseTimeRemaining(){
-        if(RemainingTimeFloat > 0) {
-            RemainingTimeFloat -= 1;
-        }
     }
 
     public void ShowErrorMessage() {
