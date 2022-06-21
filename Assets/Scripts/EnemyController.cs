@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour {
     private int Health = 5;
     private const int DESTROY_X_POSITION = 650;
     // movement speed = 0.3
-    private const float MOVEMENT_SPEED = 0.3f;
+    private const float MOVEMENT_SPEED = 0.4f;
     private const float BLINK_DELAY = 0.15f;
 
     void Awake() {

@@ -44,7 +44,7 @@ public class QuizManager : MonoBehaviour {
         QUIZ_TIME = GameManager.GetInstance().QUIZ_TIME;
         generateQuestion();
         timeQuiz = GameManager.GetInstance().QUIZ_MAX_TIME;
-        QuizTimeText.text = "TEMPO: " + Mathf.Round(timeQuiz) + "s";    
+        QuizTimeText.text = Mathf.Round(timeQuiz) + "s";    
     }
 
     void Update(){
@@ -52,7 +52,7 @@ public class QuizManager : MonoBehaviour {
             timeQuiz -= Time.deltaTime;
         }
 
-        QuizTimeText.text = "TEMPO: " + Mathf.Round(timeQuiz) + "s";    
+        QuizTimeText.text = Mathf.Round(timeQuiz) + "s";    
 
         if(timeQuiz < 0){
             timeQuiz = GameManager.GetInstance().QUIZ_MAX_TIME;
