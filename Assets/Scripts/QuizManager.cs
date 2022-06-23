@@ -57,7 +57,6 @@ public class QuizManager : MonoBehaviour {
         if(timeQuiz < 0){
             timeQuiz = GameManager.GetInstance().QUIZ_MAX_TIME;
             GameManager.GetInstance().startCountdown = false;
-            GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
             GameManager.GetInstance().quizPause = false;
             GameManager.GetInstance().answered = true;
             SoundManager.PlaySound(SoundManager.Sound.WrongAnswer);
@@ -72,7 +71,6 @@ public class QuizManager : MonoBehaviour {
 
     public void Correct() {
         QuestionAndAnswersList.RemoveAt(currentQuestion);
-        GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
         GameManager.GetInstance().quizPause = false;
         GameManager.GetInstance().answered = true;
         StartCoroutine(AnswerFeedback(QuizFeedback.Correct));
@@ -80,7 +78,6 @@ public class QuizManager : MonoBehaviour {
     }
 
     public void Wrong() {
-        GameManager.GetInstance().QUIZ_TIME += QUIZ_TIME;
         GameManager.GetInstance().quizPause = false;
         GameManager.GetInstance().answered = true;
         if(GameManager.GetInstance().livingAllies > 0) {
