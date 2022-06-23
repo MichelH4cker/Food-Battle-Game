@@ -16,7 +16,7 @@ public class GameDetails : MonoBehaviour {
 
     public bool PlayerWon;
 
-    private float RemainingTimeFloat;
+    public float RemainingTimeFloat;
     private float ErrorMessageDelay;
     private float counterTime;
  
