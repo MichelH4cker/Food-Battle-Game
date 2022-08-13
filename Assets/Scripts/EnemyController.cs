@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour {
     private int Health = 5;
     private const int DESTROY_X_POSITION = 650;
     // movement speed = 0.3
-    private const float MOVEMENT_SPEED = 0.3f;
+    private const float MOVEMENT_SPEED = 60f;
     private const float BLINK_DELAY = 0.15f;
 
     void Awake() {
@@ -38,7 +38,8 @@ public class EnemyController : MonoBehaviour {
     void Update() {   
         quizPause = GameManager.GetInstance().quizPause;
         if(!isStopped && !quizPause) {
-            transform.Translate(new Vector3(MOVEMENT_SPEED * -1, 0, 0));
+            transform.position += new Vector3(-1, 0, 0) * MOVEMENT_SPEED * Time.deltaTime * .7f;
+            //transform.Translate(new Vector3(MOVEMENT_SPEED * -1, 0, 0));
         }
         
         if (LeftTheMap()) {

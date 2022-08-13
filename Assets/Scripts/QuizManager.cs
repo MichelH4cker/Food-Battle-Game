@@ -74,7 +74,8 @@ public class QuizManager : MonoBehaviour {
         GameManager.GetInstance().quizPause = false;
         GameManager.GetInstance().answered = true;
         StartCoroutine(AnswerFeedback(QuizFeedback.Correct));
-        EnemyController.GetInstance().DestroyEnemy();
+        //EnemyController.GetInstance().DestroyEnemy();
+        EnemyController.GetInstance().ReceiveDamage(100000);
     }
 
     public void Wrong() {

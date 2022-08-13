@@ -46,7 +46,6 @@ public class FriendController : MonoBehaviour {
     private void Update() {
         quizPause = GameManager.GetInstance().quizPause;
         if (!quizPause) {
-            Debug.Log("entrou auqi");
             if (enemies.Count > 0){  
                 float distance = 1300;
                 foreach (GameObject enemy in enemies) {
