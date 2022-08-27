@@ -21,12 +21,11 @@ public class EnemyController : MonoBehaviour {
     public float DamageCooldown;    
 
     private bool isStopped;
+    private bool leftMap;
     private bool quizPause;
 
     private int RemainingHeartsInt;
     private int Health = 5;
-    private const int DESTROY_X_POSITION = 650;
-    // movement speed = 0.3
     private const float MOVEMENT_SPEED = 60f;
     private const float BLINK_DELAY = 0.15f;
 
@@ -41,8 +40,8 @@ public class EnemyController : MonoBehaviour {
             transform.position += new Vector3(-1, 0, 0) * MOVEMENT_SPEED * Time.deltaTime * .7f;
             //transform.Translate(new Vector3(MOVEMENT_SPEED * -1, 0, 0));
         }
-        
-        if (LeftTheMap()) {
+
+        if (leftMap == true) {
             Destroy(this.gameObject);
             SceneLoader.Load(SceneLoader.Scene.EndScene);
         }
@@ -52,7 +51,9 @@ public class EnemyController : MonoBehaviour {
         if (collision.gameObject.layer == 10){
             StartCoroutine(Attack(collision));
             isStopped = true;
-        }    
+        } else if (collision.gameObject.layer == 15){
+            leftMap = true;
+        }
     }
     
     IEnumerator Attack(Collider2D collision) {
@@ -94,14 +95,6 @@ public class EnemyController : MonoBehaviour {
         }
         if(destroy){
             Destroy(this.gameObject);
-        }
-    }
-
-    private bool LeftTheMap() {
-        if (transform.position.x < DESTROY_X_POSITION) {
-            return true;
-        } else {
-            return false;
         }
     }
 }
