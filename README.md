@@ -1,1 +1,2 @@
 # IC-Game
+O jogo Batalha dos Alimentos é um jogo que ajuda estudantes a entenderem melhor os conceitos de metabulismo e obesidade. O jogo funciona da seguinte maneira: o jogador posiciona alimentos saudáveis no tabuleiro para lutarem contra os alimentos não saudáveis que irão atacar. A cada intervalo de tempo surge uma pergunta sobre nutrição. Caso o jogador acerte a pergunta, um alimento não saudável desaprece do game. Senão, um alimento saudável é eliminado, dificuldando o jogo. 
